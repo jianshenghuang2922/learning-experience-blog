@@ -27,7 +27,7 @@
 <meta property="og:description" content="-上一节中， 我们知道多个同类型的变量可以用数组存储，-而重要的数据可以单独用一个变量存储。                            -现在我们来玩一个游戏：-假如我从0到100里面选了一个数字， 你来猜我选的数字我根据你猜的数字告诉你猜大还是猜小了-怎么样可以尽可能快的猜到？              思路一从0到100, 一个一个猜， 很显然， 最后肯定">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-06-12T13:46:43.000Z">
-<meta property="article:modified_time" content="2026-06-12T14:45:42.047Z">
+<meta property="article:modified_time" content="2026-06-12T15:04:07.934Z">
 <meta property="article:author" content="JianshengHuang">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -325,7 +325,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.2k 字
+          1.3k 字
         
       </span>
     
@@ -393,7 +393,7 @@
 <p>每次猜测都可以排除比我们猜测的数字大或小的所有数字，<br>要尽可能的排除不可能的情况， 我们选择中间值可以在最坏情况下最快的猜对 （证明：假如如果选了比中间值大的一个数字55， 而答案是小于55这个数字的， 接下来我们要在0到55里面选， 但是如果选的是50, 无论偏大偏小我们下一次都是只在50个数字里面选， 数字越少我们选对的概率越大， 所以选中间值可以在最坏情况下最快猜对）</p>
 <p>同时除了上一节我们介绍的for循环，我们介绍一下另一种循环的方式<br>while 循环。 正常情况下for循环常用于迭代， 而while在不知道迭代次数但是知道终止条件时用的更多。</p>
 <div class="note note-info">
-            <p>ans &#x3D; input()<br>guess &#x3D; input()<br>guessCount &#x3D; 1</p> <p>while ans not equals to guess :<br>    if guess &gt; ans:<br>        print (“猜大了\n”)<br>    else if guess &lt; ans :<br>        print(“猜小了\n”)<br>    else<br>        print(“猜对了\n”)<br>    guess &#x3D; input()<br>    guessCount +&#x3D; 1<br>print( guessCount )</p> 
+            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs python">ans = <span class="hljs-built_in">input</span>()<br>guess = <span class="hljs-built_in">input</span>()<br>guessCount = <span class="hljs-number">1</span><br><br><span class="hljs-keyword">while</span> ans <span class="hljs-keyword">not</span> equals to guess :<br>    <span class="hljs-keyword">if</span> guess &gt; ans:<br>        <span class="hljs-built_in">print</span> (<span class="hljs-string">&quot;猜大了\n&quot;</span>)<br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> guess &lt; ans :<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;猜小了\n&quot;</span>)<br>    <span class="hljs-keyword">else</span> <br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;猜对了\n&quot;</span>)<br>    guess = <span class="hljs-built_in">input</span>()<br>    guessCount += <span class="hljs-number">1</span><br><span class="hljs-built_in">print</span>( guessCount )<br></code></pre></td></tr></table></figure>
           </div>
 
 <p>更一般的， 如果我们要在一个给定范围的数据里面找到猜的数， 我们同样可以用这个思路， 我们把这种思路叫做二分法</p>
