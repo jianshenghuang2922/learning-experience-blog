@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/learning-experience-blog/2026/06/12/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>基本变量， 数组， 循环</title>
+    <url>/learning-experience-blog/2026/06/12/introduce-to-programming/</url>
+    <content><![CDATA[<div class="note note-info">
+            <p>基础数据结构：<br>    - 基本类型变量<br>    - –&gt; 线性： 数组<br>    - –&gt; 非线性： 树（图）</p> <p>int, bool, char, string, double<br>比如<br>int a &#x3D; 5<br>bool flag &#x3D; true<br>char ch &#x3D; ‘c’<br>string str &#x3D; “Hello World”<br>double b &#x3D; 3.14</p> 
+          </div>
+<ul>
+<li>我们先从线性的数组开始<br>-假如我们要存储1到100这100个数字<br>-要存储多个同类型数据：</li>
+<li>int a &#x3D; 1</li>
+<li>int b &#x3D; 2</li>
+<li>int c &#x3D; 3</li>
+<li>int d &#x3D; 4</li>
+<li>int e &#x3D; 5</li>
+<li>……</li>
+</ul>
+<pre><code class="hljs">-有100个数据， 这么写将会很麻烦， 因为我们引入了很多变--量， 我们不希望有这么多变量来增加我们的负担
+-所以我们引入数组来存储同类型的变量
+-
+-    int a[100];
+-   从零开始作为起始下标
+-    a[0] = 1
+-    a[1] = 2
+-   a[2] = 3
+-    a[3] = 4
+-    a[4] = 5
+-    a[5] = 6
+-    ......
+-你发现了， 这样在存储数据上方便了很多， 不需要引入多个变量
+
+
+- 还可以再优化别的方面吗？
+- 比如， 我们明显发现了这个数组是有规律的
+- 为了避免重复书写， 我们引入循环的概念
+- for index from 0 to 99
+-  a[index] = index + 1
+-  在c 或 c++ 里就是
+-  for (int i = 0; i &lt; 100; i += 1) &#123;
+-      a[i] = i + 1;
+-  &#125;
+</code></pre>
+<div class="note note-info">
+            <p>-练习1<br>    -假如我要输入一个整数n （n &gt;&#x3D; 1）<br>    -然后输入 n个数， 求这些数的平均值（向下取整）， 最大值， 最小值</p> <pre><code class="hljs">/** 提示： 可以用 avg maxn， minn, 来表示变量 */ </code></pre> <p>-练习2<br>    -把练习1里面的这些数每个数字加1, 然后再输出</p> 
+          </div>]]></content>
+  </entry>
+</search>
