@@ -19,21 +19,21 @@
   <meta name="author" content="JianshengHuang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="基础数据结构：    - 基本类型变量    - –&gt; 线性： 数组    - –&gt; 非线性： 树（图） int, bool, char, string, double比如int a &#x3D; 5bool flag &#x3D; truechar ch &#x3D; ‘c’string str &#x3D; “Hello World”double b &amp;#">
+    <meta name="description" content="-上一节中， 我们知道多个同类型的变量可以用数组存储，-而重要的数据可以单独用一个变量存储。                            -现在我们来玩一个游戏：-假如我从0到100里面选了一个数字， 你来猜我选的数字我根据你猜的数字告诉你猜大还是猜小了-怎么样可以尽可能快的猜到？              思路一从0到100, 一个一个猜， 很显然， 最后肯定">
 <meta property="og:type" content="article">
-<meta property="og:title" content="基本变量， 数组， 循环">
-<meta property="og:url" content="http://github.io/2026/06/12/introduce-to-programming/index.html">
+<meta property="og:title" content="introduce to divide-and-conquer">
+<meta property="og:url" content="http://github.io/2026/06/12/introduce-to-divide-and-conquer/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="基础数据结构：    - 基本类型变量    - –&gt; 线性： 数组    - –&gt; 非线性： 树（图） int, bool, char, string, double比如int a &#x3D; 5bool flag &#x3D; truechar ch &#x3D; ‘c’string str &#x3D; “Hello World”double b &amp;#">
+<meta property="og:description" content="-上一节中， 我们知道多个同类型的变量可以用数组存储，-而重要的数据可以单独用一个变量存储。                            -现在我们来玩一个游戏：-假如我从0到100里面选了一个数字， 你来猜我选的数字我根据你猜的数字告诉你猜大还是猜小了-怎么样可以尽可能快的猜到？              思路一从0到100, 一个一个猜， 很显然， 最后肯定">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-06-12T09:44:46.000Z">
-<meta property="article:modified_time" content="2026-06-12T11:40:25.987Z">
+<meta property="article:published_time" content="2026-06-12T13:46:43.000Z">
+<meta property="article:modified_time" content="2026-06-12T14:42:52.434Z">
 <meta property="article:author" content="JianshengHuang">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>基本变量， 数组， 循环 - Hexo</title>
+  <title>introduce to divide-and-conquer - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -302,7 +302,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="基本变量， 数组， 循环"></span>
+            <span id="subtitle" data-typed-text="introduce to divide-and-conquer"></span>
           
         </div>
 
@@ -313,8 +313,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-06-12 17:44" pubdate>
-          2026年6月12日 下午
+        <time datetime="2026-06-12 21:46" pubdate>
+          2026年6月12日 晚上
         </time>
       </span>
     
@@ -325,7 +325,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          689 字
+          1.2k 字
         
       </span>
     
@@ -336,7 +336,7 @@
         
         
         
-          6 分钟
+          11 分钟
         
       </span>
     
@@ -375,51 +375,36 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">基本变量， 数组， 循环</h1>
+            <h1 id="seo-header">introduce to divide-and-conquer</h1>
             
             
               <div class="markdown-body">
                 
                 <div class="note note-info">
-            <p>基础数据结构：<br>    - 基本类型变量<br>    - –&gt; 线性： 数组<br>    - –&gt; 非线性： 树（图）</p> <p>int, bool, char, string, double<br>比如<br>int a &#x3D; 5<br>bool flag &#x3D; true<br>char ch &#x3D; ‘c’<br>string str &#x3D; “Hello World”<br>double b &#x3D; 3.14</p> 
+            <p>-上一节中， 我们知道多个同类型的变量可以用数组存储，<br>-而重要的数据可以单独用一个变量存储。 </p> 
           </div>
-<ul>
-<li>我们先从线性的数组开始<br>-假如我们要存储1到100这100个数字<br>-要存储多个同类型数据：</li>
-<li>int a &#x3D; 1</li>
-<li>int b &#x3D; 2</li>
-<li>int c &#x3D; 3</li>
-<li>int d &#x3D; 4</li>
-<li>int e &#x3D; 5</li>
-<li>……</li>
-</ul>
-<pre><code class="hljs">-有100个数据， 这么写将会很麻烦， 因为我们引入了很多变--量， 我们不希望有这么多变量来增加我们的负担
--所以我们引入数组来存储同类型的变量
--
--    int a[100];
--   从零开始作为起始下标
--    a[0] = 1
--    a[1] = 2
--   a[2] = 3
--    a[3] = 4
--    a[4] = 5
--    a[5] = 6
--    ......
--你发现了， 这样在存储数据上方便了很多， 不需要引入多个变量
 
-
-- 还可以再优化别的方面吗？
-- 比如， 我们明显发现了这个数组是有规律的
-- 为了避免重复书写， 我们引入循环的概念
-- for index from 0 to 99
--  a[index] = index + 1
--  在c 或 c++ 里就是
--  for (int i = 0; i &lt; 100; i += 1) &#123;
--      a[i] = i + 1;
--  &#125;
-</code></pre>
 <div class="note note-info">
-            <p>-练习1<br>    -假如我要输入一个整数n （n &gt;&#x3D; 1）<br>    -然后输入 n个数， 求这些数的平均值（向下取整）， 最大值， 最小值</p> <pre><code class="hljs">/** 提示： 可以用 avg maxn， minn, 来表示变量 */ </code></pre> <p>-练习2<br>    -把练习1里面的这些数每个数字加1, 然后再输出</p> 
+            <p>-现在我们来玩一个游戏：<br>-假如我从0到100里面选了一个数字， 你来猜我选的数字<br>我根据你猜的数字告诉你猜大还是猜小了<br>-怎么样可以尽可能快的猜到？</p> 
           </div>
+
+<p>思路一<br>从0到100, 一个一个猜， 很显然， 最后肯定能猜到，但是如果这个数字是100, 你要猜测的次数将会高达100次！</p>
+<p>思路二<br>注意到游戏规则里面说明会告诉你猜大还是猜小， 比如我选了72,<br>你猜50, 我告诉你猜小了， 那么就可以直接排除小于50的所有数</p>
+<p>每次猜测都可以排除比我们猜测的数字大或小的所有数字，<br>要尽可能的排除不可能的情况， 我们选择中间值可以在最坏情况下最快的猜对 （证明：假如如果选了比中间值大的一个数字55， 而答案是小于55这个数字的， 接下来我们要在0到55里面选， 但是如果选的是50, 无论偏大偏小我们下一次都是只在50个数字里面选， 数字越少我们选对的概率越大， 所以选中间值可以在最坏情况下最快猜对）</p>
+<p>同时除了上一节我们介绍的for循环，我们介绍一下另一种循环的方式<br>while 循环。 正常情况下for循环常用于迭代， 而while在不知道迭代次数但是知道终止条件时用的更多。</p>
+<div class="note note-info">
+            <p>ans &#x3D; input()<br>guess &#x3D; input()<br>guessCount &#x3D; 1</p> <p>while ans not equals to guess :<br>    if guess &gt; ans:<br>        print (“猜大了\n”)<br>    else if guess &lt; ans :<br>        print(“猜小了\n”)<br>    else<br>        print(“猜对了\n”)<br>    guess &#x3D; input()<br>    guessCount +&#x3D; 1<br>print( guessCount )</p> 
+          </div>
+
+<p>更一般的， 如果我们要在一个给定范围的数据里面找到猜的数， 我们同样可以用这个思路， 我们把这种思路叫做二分法</p>
+<p>二分法有个前提， 这个数据得是有序的， 然后我们才可以根据偏大偏小来排除(如果不满足有序， 我们需要先排序)</p>
+<div class="note note-info">
+            <p>练习：<br>    假如现在输入了low， high 分别表示要猜测数据的最大和最小值<br>    以及一个数组存储了从low 到 high的数据, 要从这个数组里面找到我们要寻找的target, 设计程序使得能够在最坏情况下找的最快</p> <ul> <li><p>&#x2F;** 提示* 我们让程序模拟这个过程， 每次都猜中间值 *&#x2F;</p> </li> <li></li> <li></li> <li></li> <li></li> <li></li> </ul>    <div class="note note-info">             <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs python">low = <span class="hljs-built_in">input</span>(), high = <span class="hljs-built_in">input</span>(), target = <span class="hljs-built_in">input</span>()<br>cnt = <span class="hljs-number">0</span><br>   <br><span class="hljs-keyword">while</span> low &lt;= high :<br>    mid = low + (high - low) / <span class="hljs-number">2</span><br>    <span class="hljs-keyword">if</span> mid == target :<br>        <span class="hljs-keyword">break</span><br>    <span class="hljs-keyword">if</span> mid &gt; target :<br>        high = mid - <span class="hljs-number">1</span><br>    <span class="hljs-keyword">else</span> <br>        low = mid + <span class="hljs-number">1</span><br>    cnt += <span class="hljs-number">1</span><br><br><span class="hljs-built_in">print</span> (cnt)<br></code></pre></td></tr></table></figure>           </div>
+          </div>
+
+<p>到这里我们完成了最基本的二分查找模板， 利用这个思路我们<br>可以较快实现在有序组的查找， 在后面的二分答案算法， 二叉搜索树（BST）， 红黑树等里面都有应用</p>
+<p>后续请在洛谷或者leetcode上完成一定量二分查找标签的题目进行巩固</p>
+
                 
               </div>
             
@@ -436,8 +421,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>基本变量， 数组， 循环</div>
-      <div>http://github.io/2026/06/12/introduce-to-programming/</div>
+      <div>introduce to divide-and-conquer</div>
+      <div>http://github.io/2026/06/12/introduce-to-divide-and-conquer/</div>
     </div>
     <div class="license-meta">
       
@@ -481,18 +466,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/learning-experience-blog/2026/06/12/introduce-to-divide-and-conquer/" title="introduce to divide-and-conquer">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">introduce to divide-and-conquer</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/learning-experience-blog/2026/06/12/quick-start/" title="Hello World">
-                        <span class="hidden-mobile">Hello World</span>
+                      <a href="/learning-experience-blog/2026/06/12/introduce-to-programming/" title="基本变量， 数组， 循环">
+                        <span class="hidden-mobile">基本变量， 数组， 循环</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
