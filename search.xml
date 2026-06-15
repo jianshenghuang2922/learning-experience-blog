@@ -1,6 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>二分思想引入</title>
+    <url>/learning-experience-blog/2026/06/12/introduce-to-divide-and-conquer/</url>
+    <content><![CDATA[<div class="note note-info">
+            <p>-上一节中， 我们知道多个同类型的变量可以用数组存储，<br>-而重要的数据可以单独用一个变量存储。 </p> 
+          </div>
+
+<div class="note note-info">
+            <p>-现在我们来玩一个游戏：<br>-假如我从0到100里面选了一个数字， 你来猜我选的数字<br>我根据你猜的数字告诉你猜大还是猜小了<br>-怎么样可以尽可能快的猜到？</p> 
+          </div>
+
+<p>思路一<br>从0到100, 一个一个猜， 很显然， 最后肯定能猜到，但是如果这个数字是100, 你要猜测的次数将会高达100次！</p>
+<p>思路二<br>注意到游戏规则里面说明会告诉你猜大还是猜小， 比如我选了72,<br>你猜50, 我告诉你猜小了， 那么就可以直接排除小于50的所有数</p>
+<p>每次猜测都可以排除比我们猜测的数字大或小的所有数字，<br>要尽可能的排除不可能的情况， 我们选择中间值可以在最坏情况下最快的猜对 （证明：假如如果选了比中间值大的一个数字55， 而答案是小于55这个数字的， 接下来我们要在0到55里面选， 但是如果选的是50, 无论偏大偏小我们下一次都是只在50个数字里面选， 数字越少我们选对的概率越大， 所以选中间值可以在最坏情况下最快猜对）</p>
+<p>同时除了上一节我们介绍的for循环，我们介绍一下另一种循环的方式<br>while 循环。 正常情况下for循环常用于迭代， 而while在不知道迭代次数但是知道终止条件时用的更多。</p>
+<div class="note note-info">
+            <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">ans = <span class="hljs-built_in">input</span>()<br>guess = <span class="hljs-built_in">input</span>()<br>guessCount = <span class="hljs-number">1</span><br><br><span class="hljs-keyword">while</span> ans <span class="hljs-keyword">not</span> equals to guess :<br>    <span class="hljs-keyword">if</span> guess &gt; ans:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;猜大了\n&quot;</span>)<br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> guess &lt; ans :<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;猜小了\n&quot;</span>)<br>    <span class="hljs-keyword">else</span> <br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;猜对了\n&quot;</span>)<br>    guess = <span class="hljs-built_in">input</span>()<br>    guessCount += <span class="hljs-number">1</span><br><span class="hljs-built_in">print</span>(guessCount)<br></code></pre></td></tr></table></figure>
+          </div>
+
+<p>更一般的， 如果我们要在一个给定范围的数据里面找到猜的数， 我们同样可以用这个思路， 我们把这种思路叫做二分法</p>
+<p>二分法有个前提， 这个数据得是有序的， 然后我们才可以根据偏大偏小来排除(如果不满足有序， 我们需要先排序)</p>
+<div class="note note-info">
+            <p>练习：<br>    假如现在输入了low， high 分别表示要猜测数据的最大和最小值<br>    以及一个数组存储了从low 到 high的数据, 要从这个数组里面找到我们要寻找的target, 设计程序使得能够在最坏情况下找的最快</p> <ul> <li><p>&#x2F;** 提示* 我们让程序模拟这个过程， 每次都猜中间值 *&#x2F;</p> </li> <li></li> <li></li> <li></li> <li></li> <li></li> </ul>    <div class="note note-info">             <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">low = <span class="hljs-built_in">input</span>(), high = <span class="hljs-built_in">input</span>(), target = <span class="hljs-built_in">input</span>()<br>cnt = <span class="hljs-number">0</span><br>   <br><span class="hljs-keyword">while</span> low &lt;= high :<br>    mid = low + (high - low) / <span class="hljs-number">2</span><br>    <span class="hljs-keyword">if</span> mid == target :<br>        <span class="hljs-keyword">break</span><br>    <span class="hljs-keyword">if</span> mid &gt; target :<br>        high = mid - <span class="hljs-number">1</span><br>    <span class="hljs-keyword">else</span> <br>        low = mid + <span class="hljs-number">1</span><br>    cnt += <span class="hljs-number">1</span><br><br><span class="hljs-built_in">print</span>(cnt)<br></code></pre></td></tr></table></figure>           </div>
+          </div>
+
+<p>到这里我们完成了最基本的二分查找模板， 利用这个思路我们<br>可以较快实现在有序组的查找， 在后面的二分答案算法， 二叉搜索树（BST）， 红黑树等里面都有应用</p>
+<p>后续请在洛谷或者leetcode上完成一定量二分查找标签的题目进行巩固</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>来自各方的建议</title>
+    <url>/learning-experience-blog/2026/06/15/suggested-opinions/</url>
+    <content><![CDATA[<div class="note note-info">
+            <p>From 研究生学长</p> <p>我感觉去中大厂 项目和实习要丰富 这样简历筛和面试容易通过<br>最近如果不方便去实习的话 可以自己搞一个agent开发或者后端开发写到简历 或者找一个线上实习 一般一个实习➕一两个项目就很好了 不用太多 但是要有新意<br>比如agent开发现在的普遍难点是如何管理上下文 你的项目可以针对某个具体的业务 说一说这个业务里怎么设计上下文的 注意要结合业务设计 这样跟面试官讲的时候面试官会感兴趣 避免设计出什么场景都能用的方案 因为这种方案往往会让面试官觉得自己没有花心思设计 只是用了市面上的现有方案<br>而且你是找暑期实习不是转正实习 应该要好找很多</p> 
+          </div>
+
+<div class="note note-info">
+            <p>From reddit</p> <p>终端导航和命令，git，您选择的语言。然后用所有这些技能做一个小项目，例如：终端：待办事项列表、猜谜游戏、基本计算器。</p> <p>然后学习内存管理，最好使用C语言，回过头来用C实现相同的项目。再做几个更复杂的项目，可能使用一些UI库或者其他的，只是为了让您对主要语言更加熟悉。</p> <p>接着是数据库&#x2F;网络，再做一个基本项目，比如让您的计算器通过SSH和TCP在两个实例间工作，可能还要在数据库中存储撤消和重做功能。</p> <p>这将巩固您的基础知识。<br>您可以跳过制作网站，但实际上您还有大约3年的时间成为一名真正优秀的开发者，所以在接触复杂的技术栈之前，您需要确保您的基础扎实。</p> <p>您对计算机做什么、编译器是什么、操作系统如何工作、网络是如何运作的等概念越清晰，您掌握其他技术的能力就会越强，成为更优秀的开发者。</p> <p>当然，您可以不断磨练JavaScript和React，做一个复制粘贴的网站，但如果面试官问您什么是TCP，或者什么是字节，而您愣愣地盯着他们，他们就会知道您是个什么水平的开发者。</p> <p>这只是我的个人看法，可能有人会不同意，但基础知识可以帮助您在这个职业的混乱中找到秩序。</p> 
+          </div>
+
+
+<div class="note note-info">
+            <p>From myself<br>在csdiy.wiki上学习， 修炼内功<br>听取学长和其他人的项目和开发上的建议，<br>拓展学习方向和锻炼能力</p> 
+          </div>]]></content>
+  </entry>
+  <entry>
     <title>基本变量， 数组， 循环</title>
     <url>/learning-experience-blog/2026/06/12/introduce-to-programming/</url>
     <content><![CDATA[<div class="note note-info">
@@ -47,35 +92,6 @@
           </div>]]></content>
   </entry>
   <entry>
-    <title>二分思想引入</title>
-    <url>/learning-experience-blog/2026/06/12/introduce-to-divide-and-conquer/</url>
-    <content><![CDATA[<div class="note note-info">
-            <p>-上一节中， 我们知道多个同类型的变量可以用数组存储，<br>-而重要的数据可以单独用一个变量存储。 </p> 
-          </div>
-
-<div class="note note-info">
-            <p>-现在我们来玩一个游戏：<br>-假如我从0到100里面选了一个数字， 你来猜我选的数字<br>我根据你猜的数字告诉你猜大还是猜小了<br>-怎么样可以尽可能快的猜到？</p> 
-          </div>
-
-<p>思路一<br>从0到100, 一个一个猜， 很显然， 最后肯定能猜到，但是如果这个数字是100, 你要猜测的次数将会高达100次！</p>
-<p>思路二<br>注意到游戏规则里面说明会告诉你猜大还是猜小， 比如我选了72,<br>你猜50, 我告诉你猜小了， 那么就可以直接排除小于50的所有数</p>
-<p>每次猜测都可以排除比我们猜测的数字大或小的所有数字，<br>要尽可能的排除不可能的情况， 我们选择中间值可以在最坏情况下最快的猜对 （证明：假如如果选了比中间值大的一个数字55， 而答案是小于55这个数字的， 接下来我们要在0到55里面选， 但是如果选的是50, 无论偏大偏小我们下一次都是只在50个数字里面选， 数字越少我们选对的概率越大， 所以选中间值可以在最坏情况下最快猜对）</p>
-<p>同时除了上一节我们介绍的for循环，我们介绍一下另一种循环的方式<br>while 循环。 正常情况下for循环常用于迭代， 而while在不知道迭代次数但是知道终止条件时用的更多。</p>
-<div class="note note-info">
-            <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">ans = <span class="hljs-built_in">input</span>()<br>guess = <span class="hljs-built_in">input</span>()<br>guessCount = <span class="hljs-number">1</span><br><br><span class="hljs-keyword">while</span> ans <span class="hljs-keyword">not</span> equals to guess :<br>    <span class="hljs-keyword">if</span> guess &gt; ans:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;猜大了\n&quot;</span>)<br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> guess &lt; ans :<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;猜小了\n&quot;</span>)<br>    <span class="hljs-keyword">else</span> <br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;猜对了\n&quot;</span>)<br>    guess = <span class="hljs-built_in">input</span>()<br>    guessCount += <span class="hljs-number">1</span><br><span class="hljs-built_in">print</span>(guessCount)<br></code></pre></td></tr></table></figure>
-          </div>
-
-<p>更一般的， 如果我们要在一个给定范围的数据里面找到猜的数， 我们同样可以用这个思路， 我们把这种思路叫做二分法</p>
-<p>二分法有个前提， 这个数据得是有序的， 然后我们才可以根据偏大偏小来排除(如果不满足有序， 我们需要先排序)</p>
-<div class="note note-info">
-            <p>练习：<br>    假如现在输入了low， high 分别表示要猜测数据的最大和最小值<br>    以及一个数组存储了从low 到 high的数据, 要从这个数组里面找到我们要寻找的target, 设计程序使得能够在最坏情况下找的最快</p> <ul> <li><p>&#x2F;** 提示* 我们让程序模拟这个过程， 每次都猜中间值 *&#x2F;</p> </li> <li></li> <li></li> <li></li> <li></li> <li></li> </ul>    <div class="note note-info">             <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">low = <span class="hljs-built_in">input</span>(), high = <span class="hljs-built_in">input</span>(), target = <span class="hljs-built_in">input</span>()<br>cnt = <span class="hljs-number">0</span><br>   <br><span class="hljs-keyword">while</span> low &lt;= high :<br>    mid = low + (high - low) / <span class="hljs-number">2</span><br>    <span class="hljs-keyword">if</span> mid == target :<br>        <span class="hljs-keyword">break</span><br>    <span class="hljs-keyword">if</span> mid &gt; target :<br>        high = mid - <span class="hljs-number">1</span><br>    <span class="hljs-keyword">else</span> <br>        low = mid + <span class="hljs-number">1</span><br>    cnt += <span class="hljs-number">1</span><br><br><span class="hljs-built_in">print</span>(cnt)<br></code></pre></td></tr></table></figure>           </div>
-          </div>
-
-<p>到这里我们完成了最基本的二分查找模板， 利用这个思路我们<br>可以较快实现在有序组的查找， 在后面的二分答案算法， 二叉搜索树（BST）， 红黑树等里面都有应用</p>
-<p>后续请在洛谷或者leetcode上完成一定量二分查找标签的题目进行巩固</p>
-]]></content>
-  </entry>
-  <entry>
     <title>创建博客基础命令</title>
     <url>/learning-experience-blog/2026/06/12/quick-start/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -91,21 +107,5 @@ $ hexo cl &amp;&amp; hexo g -d
 ...
 </code></pre>
 ]]></content>
-  </entry>
-  <entry>
-    <title>来自各方的建议</title>
-    <url>/learning-experience-blog/2026/06/15/suggested-opinions/</url>
-    <content><![CDATA[<div class="note note-info">
-            <p>From 研究生学长</p> <p>我感觉去中大厂 项目和实习要丰富 这样简历筛和面试容易通过<br>最近如果不方便去实习的话 可以自己搞一个agent开发或者后端开发写到简历 或者找一个线上实习 一般一个实习➕一两个项目就很好了 不用太多 但是要有新意<br>比如agent开发现在的普遍难点是如何管理上下文 你的项目可以针对某个具体的业务 说一说这个业务里怎么设计上下文的 注意要结合业务设计 这样跟面试官讲的时候面试官会感兴趣 避免设计出什么场景都能用的方案 因为这种方案往往会让面试官觉得自己没有花心思设计 只是用了市面上的现有方案<br>而且你是找暑期实习不是转正实习 应该要好找很多</p> 
-          </div>
-
-<div class="note note-info">
-            <p>From reddit</p> <p>终端导航和命令，git，您选择的语言。然后用所有这些技能做一个小项目，例如：终端：待办事项列表、猜谜游戏、基本计算器。</p> <p>然后学习内存管理，最好使用C语言，回过头来用C实现相同的项目。再做几个更复杂的项目，可能使用一些UI库或者其他的，只是为了让您对主要语言更加熟悉。</p> <p>接着是数据库&#x2F;网络，再做一个基本项目，比如让您的计算器通过SSH和TCP在两个实例间工作，可能还要在数据库中存储撤消和重做功能。</p> <p>这将巩固您的基础知识。<br>您可以跳过制作网站，但实际上您还有大约3年的时间成为一名真正优秀的开发者，所以在接触复杂的技术栈之前，您需要确保您的基础扎实。</p> <p>您对计算机做什么、编译器是什么、操作系统如何工作、网络是如何运作的等概念越清晰，您掌握其他技术的能力就会越强，成为更优秀的开发者。</p> <p>当然，您可以不断磨练JavaScript和React，做一个复制粘贴的网站，但如果面试官问您什么是TCP，或者什么是字节，而您愣愣地盯着他们，他们就会知道您是个什么水平的开发者。</p> <p>这只是我的个人看法，可能有人会不同意，但基础知识可以帮助您在这个职业的混乱中找到秩序。</p> 
-          </div>
-
-
-<div class="note note-info">
-            <p>在csdiy.wiki上学习， 修炼内功<br>听取学长和其他人的项目和开发上的建议，<br>拓展学习方向和锻炼能力</p> 
-          </div>]]></content>
   </entry>
 </search>
