@@ -47,13 +47,6 @@
           </div>]]></content>
   </entry>
   <entry>
-    <title>我的人生见解</title>
-    <url>/learning-experience-blog/2026/06/18/life-insights/</url>
-    <content><![CDATA[<div class="note note-info">
-            <ol> <li><p>判断要不要去做， 做的对不对的一个方法是<br> “你以后会不会为此后悔”</p> </li> <li><p>我的人生格言是<br>“有善始者实繁， 能克终者盖寡”</p> </li> <li><p>我认为人生意义可以从两方面看<br>一是”人生的意义在于体验“<br>二是”人生的意义在于为人民服务“</p> </li> </ol> 
-          </div>]]></content>
-  </entry>
-  <entry>
     <title>创建博客基础命令</title>
     <url>/learning-experience-blog/2026/06/12/quick-start/</url>
     <content><![CDATA[<h1 id="welcome">Welcome</h1>
@@ -66,6 +59,29 @@
 <h3 id="Run-server-1"><a href="#Run-server-1" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">填写完成后按以下命令发布<br>$ hexo cl &amp;&amp; hexo g -d<br></code></pre></td></tr></table></figure>
 
 ]]></content>
+  </entry>
+  <entry>
+    <title>我的人生见解</title>
+    <url>/learning-experience-blog/2026/06/18/life-insights/</url>
+    <content><![CDATA[<div class="note note-info">
+            <ol> <li><p>判断要不要去做， 做的对不对的一个方法是<br> “你以后会不会为此后悔”</p> </li> <li><p>我的人生格言是<br>“有善始者实繁， 能克终者盖寡”</p> </li> <li><p>我认为人生意义可以从两方面看<br>一是”人生的意义在于体验“<br>二是”人生的意义在于为人民服务“</p> </li> </ol> 
+          </div>]]></content>
+  </entry>
+  <entry>
+    <title>来自各方的建议</title>
+    <url>/learning-experience-blog/2026/06/15/suggested-opinions/</url>
+    <content><![CDATA[<div class="note note-info">
+            <p>From 研究生学长</p> <p>我感觉去中大厂 项目和实习要丰富 这样简历筛和面试容易通过<br>最近如果不方便去实习的话 可以自己搞一个agent开发或者后端开发写到简历 或者找一个线上实习 一般一个实习➕一两个项目就很好了 不用太多 但是要有新意<br>比如agent开发现在的普遍难点是如何管理上下文 你的项目可以针对某个具体的业务 说一说这个业务里怎么设计上下文的 注意要结合业务设计 这样跟面试官讲的时候面试官会感兴趣 避免设计出什么场景都能用的方案 因为这种方案往往会让面试官觉得自己没有花心思设计 只是用了市面上的现有方案<br>而且你是找暑期实习不是转正实习 应该要好找很多</p> 
+          </div>
+
+<div class="note note-info">
+            <p>From reddit</p> <p>终端导航和命令，git，您选择的语言。然后用所有这些技能做一个小项目，例如：终端：待办事项列表、猜谜游戏、基本计算器。</p> <p>然后学习内存管理，最好使用C语言，回过头来用C实现相同的项目。再做几个更复杂的项目，可能使用一些UI库或者其他的，只是为了让您对主要语言更加熟悉。</p> <p>接着是数据库&#x2F;网络，再做一个基本项目，比如让您的计算器通过SSH和TCP在两个实例间工作，可能还要在数据库中存储撤消和重做功能。</p> <p>这将巩固您的基础知识。<br>您可以跳过制作网站，但实际上您还有大约3年的时间成为一名真正优秀的开发者，所以在接触复杂的技术栈之前，您需要确保您的基础扎实。</p> <p>您对计算机做什么、编译器是什么、操作系统如何工作、网络是如何运作的等概念越清晰，您掌握其他技术的能力就会越强，成为更优秀的开发者。</p> <p>当然，您可以不断磨练JavaScript和React，做一个复制粘贴的网站，但如果面试官问您什么是TCP，或者什么是字节，而您愣愣地盯着他们，他们就会知道您是个什么水平的开发者。</p> <p>这只是我的个人看法，可能有人会不同意，但基础知识可以帮助您在这个职业的混乱中找到秩序。</p> 
+          </div>
+
+
+<div class="note note-info">
+            <p>From myself<br>在csdiy.wiki上学习， 修炼内功<br>听取学长和其他人的项目和开发上的建议，<br>拓展学习方向和锻炼能力</p> 
+          </div>]]></content>
   </entry>
   <entry>
     <title>二分思想引入</title>
@@ -95,21 +111,5 @@
 <p>到这里我们完成了最基本的二分查找模板， 利用这个思路我们<br>可以较快实现在有序组的查找， 在后面的二分答案算法， 二叉搜索树（BST）， 红黑树等里面都有应用</p>
 <p>后续请在洛谷或者leetcode上完成一定量二分查找标签的题目进行巩固</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>来自各方的建议</title>
-    <url>/learning-experience-blog/2026/06/15/suggested-opinions/</url>
-    <content><![CDATA[<div class="note note-info">
-            <p>From 研究生学长</p> <p>我感觉去中大厂 项目和实习要丰富 这样简历筛和面试容易通过<br>最近如果不方便去实习的话 可以自己搞一个agent开发或者后端开发写到简历 或者找一个线上实习 一般一个实习➕一两个项目就很好了 不用太多 但是要有新意<br>比如agent开发现在的普遍难点是如何管理上下文 你的项目可以针对某个具体的业务 说一说这个业务里怎么设计上下文的 注意要结合业务设计 这样跟面试官讲的时候面试官会感兴趣 避免设计出什么场景都能用的方案 因为这种方案往往会让面试官觉得自己没有花心思设计 只是用了市面上的现有方案<br>而且你是找暑期实习不是转正实习 应该要好找很多</p> 
-          </div>
-
-<div class="note note-info">
-            <p>From reddit</p> <p>终端导航和命令，git，您选择的语言。然后用所有这些技能做一个小项目，例如：终端：待办事项列表、猜谜游戏、基本计算器。</p> <p>然后学习内存管理，最好使用C语言，回过头来用C实现相同的项目。再做几个更复杂的项目，可能使用一些UI库或者其他的，只是为了让您对主要语言更加熟悉。</p> <p>接着是数据库&#x2F;网络，再做一个基本项目，比如让您的计算器通过SSH和TCP在两个实例间工作，可能还要在数据库中存储撤消和重做功能。</p> <p>这将巩固您的基础知识。<br>您可以跳过制作网站，但实际上您还有大约3年的时间成为一名真正优秀的开发者，所以在接触复杂的技术栈之前，您需要确保您的基础扎实。</p> <p>您对计算机做什么、编译器是什么、操作系统如何工作、网络是如何运作的等概念越清晰，您掌握其他技术的能力就会越强，成为更优秀的开发者。</p> <p>当然，您可以不断磨练JavaScript和React，做一个复制粘贴的网站，但如果面试官问您什么是TCP，或者什么是字节，而您愣愣地盯着他们，他们就会知道您是个什么水平的开发者。</p> <p>这只是我的个人看法，可能有人会不同意，但基础知识可以帮助您在这个职业的混乱中找到秩序。</p> 
-          </div>
-
-
-<div class="note note-info">
-            <p>From myself<br>在csdiy.wiki上学习， 修炼内功<br>听取学长和其他人的项目和开发上的建议，<br>拓展学习方向和锻炼能力</p> 
-          </div>]]></content>
   </entry>
 </search>

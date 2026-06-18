@@ -292,7 +292,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="An elegant Material-Design theme for Hexo"></span>
+            <span id="subtitle" data-typed-text="欢迎来到JianshengHuang的博客!&lt;br&gt;这里记录了我的学习与感悟。"></span>
           
         </div>
 
@@ -579,7 +579,9 @@
       }
       var text = subtitle.getAttribute('data-typed-text');
       
-        typing(text);
+        var texts = ["欢迎来到JianshengHuang的博客!<br>这里记录了我的学习与感悟。"];
+        var idx = Math.floor(Math.random() * texts.length);
+        typing(texts[idx]);
       
     })(window, document);
   </script>
