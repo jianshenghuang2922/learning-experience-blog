@@ -29,21 +29,22 @@ tags:
 while 循环。 正常情况下for循环常用于迭代， 而while在不知道迭代次数但是知道终止条件时用的更多。
 
 {% note info %}
+```python
 ans = input()
 guess = input()
 guessCount = 1
 
 while ans not equals to guess :
     if guess > ans:
-        print ("猜大了\n")
+        print("猜大了\n")
     else if guess < ans :
         print("猜小了\n")
     else 
         print("猜对了\n")
     guess = input()
     guessCount += 1
-print( guessCount )
-
+print(guessCount)
+```
 {% endnote %}
 
 更一般的， 如果我们要在一个给定范围的数据里面找到猜的数， 我们同样可以用这个思路， 我们把这种思路叫做二分法
@@ -77,7 +78,7 @@ print( guessCount )
             low = mid + 1
         cnt += 1
     
-    print (cnt)
+    print(cnt)
     ```
    {% endnote %}
 {% endnote %}
