@@ -1,57 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>二分思想引入</title>
-    <url>/learning-experience-blog/2026/06/12/introduce-to-divide-and-conquer/</url>
-    <content><![CDATA[<div class="note note-info">
-            <p>-上一节中， 我们知道多个同类型的变量可以用数组存储，<br>-而重要的数据可以单独用一个变量存储。 </p> 
-          </div>
-
-<div class="note note-info">
-            <p>-现在我们来玩一个游戏：<br>-假如我从0到100里面选了一个数字， 你来猜我选的数字<br>我根据你猜的数字告诉你猜大还是猜小了<br>-怎么样可以尽可能快的猜到？</p> 
-          </div>
-
-<p>思路一<br>从0到100, 一个一个猜， 很显然， 最后肯定能猜到，但是如果这个数字是100, 你要猜测的次数将会高达100次！</p>
-<p>思路二<br>注意到游戏规则里面说明会告诉你猜大还是猜小， 比如我选了72,<br>你猜50, 我告诉你猜小了， 那么就可以直接排除小于50的所有数</p>
-<p>每次猜测都可以排除比我们猜测的数字大或小的所有数字，<br>要尽可能的排除不可能的情况， 我们选择中间值可以在最坏情况下最快的猜对 （证明：假如如果选了比中间值大的一个数字55， 而答案是小于55这个数字的， 接下来我们要在0到55里面选， 但是如果选的是50, 无论偏大偏小我们下一次都是只在50个数字里面选， 数字越少我们选对的概率越大， 所以选中间值可以在最坏情况下最快猜对）</p>
-<p>同时除了上一节我们介绍的for循环，我们介绍一下另一种循环的方式<br>while 循环。 正常情况下for循环常用于迭代， 而while在不知道迭代次数但是知道终止条件时用的更多。</p>
-<div class="note note-info">
-            <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">ans = <span class="hljs-built_in">input</span>()<br>guess = <span class="hljs-built_in">input</span>()<br>guessCount = <span class="hljs-number">1</span><br><br><span class="hljs-keyword">while</span> ans <span class="hljs-keyword">not</span> equals to guess :<br>    <span class="hljs-keyword">if</span> guess &gt; ans:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;猜大了\n&quot;</span>)<br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> guess &lt; ans :<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;猜小了\n&quot;</span>)<br>    <span class="hljs-keyword">else</span> <br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;猜对了\n&quot;</span>)<br>    guess = <span class="hljs-built_in">input</span>()<br>    guessCount += <span class="hljs-number">1</span><br><span class="hljs-built_in">print</span>(guessCount)<br></code></pre></td></tr></table></figure>
-          </div>
-
-<p>更一般的， 如果我们要在一个给定范围的数据里面找到猜的数， 我们同样可以用这个思路， 我们把这种思路叫做二分法</p>
-<p>二分法有个前提， 这个数据得是有序的， 然后我们才可以根据偏大偏小来排除(如果不满足有序， 我们需要先排序)</p>
-<div class="note note-info">
-            <p>练习：<br>    假如现在输入了low， high 分别表示要猜测数据的最大和最小值<br>    以及一个数组存储了从low 到 high的数据, 要从这个数组里面找到我们要寻找的target, 设计程序使得能够在最坏情况下找的最快</p> <ul> <li><p>&#x2F;** 提示* 我们让程序模拟这个过程， 每次都猜中间值 *&#x2F;</p> </li> <li></li> <li></li> <li></li> <li></li> <li></li> </ul>    <div class="note note-info">             <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">low = <span class="hljs-built_in">input</span>(), high = <span class="hljs-built_in">input</span>(), target = <span class="hljs-built_in">input</span>()<br>cnt = <span class="hljs-number">0</span><br>   <br><span class="hljs-keyword">while</span> low &lt;= high :<br>    mid = low + (high - low) / <span class="hljs-number">2</span><br>    <span class="hljs-keyword">if</span> mid == target :<br>        <span class="hljs-keyword">break</span><br>    <span class="hljs-keyword">if</span> mid &gt; target :<br>        high = mid - <span class="hljs-number">1</span><br>    <span class="hljs-keyword">else</span> <br>        low = mid + <span class="hljs-number">1</span><br>    cnt += <span class="hljs-number">1</span><br><br><span class="hljs-built_in">print</span>(cnt)<br></code></pre></td></tr></table></figure>           </div>
-          </div>
-
-<p>到这里我们完成了最基本的二分查找模板， 利用这个思路我们<br>可以较快实现在有序组的查找， 在后面的二分答案算法， 二叉搜索树（BST）， 红黑树等里面都有应用</p>
-<p>后续请在洛谷或者leetcode上完成一定量二分查找标签的题目进行巩固</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>创建博客基础命令</title>
-    <url>/learning-experience-blog/2026/07/03/quick-start/</url>
-    <content><![CDATA[<h1 id="welcome">Welcome</h1>
-<p>按照以下命令即可创建博客</p>
-
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">创建博客，开始在编辑器填写<br>$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">填写过程中可以用以下命令实时查看内容<br>$ hexo cl &amp;&amp; hexo s<br></code></pre></td></tr></table></figure>
-
-<h3 id="Run-server-1"><a href="#Run-server-1" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">填写完成后按以下命令发布<br>$ hexo cl &amp;&amp; hexo g -d<br></code></pre></td></tr></table></figure>
-
-]]></content>
-  </entry>
-  <entry>
-    <title>我的人生见解</title>
-    <url>/learning-experience-blog/2026/06/18/life-insights/</url>
-    <content><![CDATA[<div class="note note-info">
-            <ol> <li><p>判断要不要去做， 做的对不对的一个方法是<br> “你以后会不会为此后悔”</p> </li> <li><p>我的人生格言是<br>“有善始者实繁， 能克终者盖寡”</p> </li> <li><p>我认为人生意义可以从两方面看<br>一是”人生的意义在于体验“<br>二是”人生的意义在于为人民服务“</p> </li> </ol> 
-          </div>
-]]></content>
-  </entry>
-  <entry>
     <title>基本变量， 数组， 循环</title>
     <url>/learning-experience-blog/2026/06/12/introduce-to-programming/</url>
     <content><![CDATA[<div class="note note-info">
@@ -98,6 +47,66 @@
           </div>]]></content>
   </entry>
   <entry>
+    <title>二分思想引入</title>
+    <url>/learning-experience-blog/2026/06/12/introduce-to-divide-and-conquer/</url>
+    <content><![CDATA[<div class="note note-info">
+            <p>-上一节中， 我们知道多个同类型的变量可以用数组存储，<br>-而重要的数据可以单独用一个变量存储。 </p> 
+          </div>
+
+<div class="note note-info">
+            <p>-现在我们来玩一个游戏：<br>-假如我从0到100里面选了一个数字， 你来猜我选的数字<br>我根据你猜的数字告诉你猜大还是猜小了<br>-怎么样可以尽可能快的猜到？</p> 
+          </div>
+
+<p>思路一<br>从0到100, 一个一个猜， 很显然， 最后肯定能猜到，但是如果这个数字是100, 你要猜测的次数将会高达100次！</p>
+<p>思路二<br>注意到游戏规则里面说明会告诉你猜大还是猜小， 比如我选了72,<br>你猜50, 我告诉你猜小了， 那么就可以直接排除小于50的所有数</p>
+<p>每次猜测都可以排除比我们猜测的数字大或小的所有数字，<br>要尽可能的排除不可能的情况， 我们选择中间值可以在最坏情况下最快的猜对 （证明：假如如果选了比中间值大的一个数字55， 而答案是小于55这个数字的， 接下来我们要在0到55里面选， 但是如果选的是50, 无论偏大偏小我们下一次都是只在50个数字里面选， 数字越少我们选对的概率越大， 所以选中间值可以在最坏情况下最快猜对）</p>
+<p>同时除了上一节我们介绍的for循环，我们介绍一下另一种循环的方式<br>while 循环。 正常情况下for循环常用于迭代， 而while在不知道迭代次数但是知道终止条件时用的更多。</p>
+<div class="note note-info">
+            <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">ans = <span class="hljs-built_in">input</span>()<br>guess = <span class="hljs-built_in">input</span>()<br>guessCount = <span class="hljs-number">1</span><br><br><span class="hljs-keyword">while</span> ans <span class="hljs-keyword">not</span> equals to guess :<br>    <span class="hljs-keyword">if</span> guess &gt; ans:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;猜大了\n&quot;</span>)<br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> guess &lt; ans :<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;猜小了\n&quot;</span>)<br>    <span class="hljs-keyword">else</span> <br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;猜对了\n&quot;</span>)<br>    guess = <span class="hljs-built_in">input</span>()<br>    guessCount += <span class="hljs-number">1</span><br><span class="hljs-built_in">print</span>(guessCount)<br></code></pre></td></tr></table></figure>
+          </div>
+
+<p>更一般的， 如果我们要在一个给定范围的数据里面找到猜的数， 我们同样可以用这个思路， 我们把这种思路叫做二分法</p>
+<p>二分法有个前提， 这个数据得是有序的， 然后我们才可以根据偏大偏小来排除(如果不满足有序， 我们需要先排序)</p>
+<div class="note note-info">
+            <p>练习：<br>    假如现在输入了low， high 分别表示要猜测数据的最大和最小值<br>    以及一个数组存储了从low 到 high的数据, 要从这个数组里面找到我们要寻找的target, 设计程序使得能够在最坏情况下找的最快</p> <ul> <li><p>&#x2F;** 提示* 我们让程序模拟这个过程， 每次都猜中间值 *&#x2F;</p> </li> <li></li> <li></li> <li></li> <li></li> <li></li> </ul>    <div class="note note-info">             <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">low = <span class="hljs-built_in">input</span>(), high = <span class="hljs-built_in">input</span>(), target = <span class="hljs-built_in">input</span>()<br>cnt = <span class="hljs-number">0</span><br>   <br><span class="hljs-keyword">while</span> low &lt;= high :<br>    mid = low + (high - low) / <span class="hljs-number">2</span><br>    <span class="hljs-keyword">if</span> mid == target :<br>        <span class="hljs-keyword">break</span><br>    <span class="hljs-keyword">if</span> mid &gt; target :<br>        high = mid - <span class="hljs-number">1</span><br>    <span class="hljs-keyword">else</span> <br>        low = mid + <span class="hljs-number">1</span><br>    cnt += <span class="hljs-number">1</span><br><br><span class="hljs-built_in">print</span>(cnt)<br></code></pre></td></tr></table></figure>           </div>
+          </div>
+
+<p>到这里我们完成了最基本的二分查找模板， 利用这个思路我们<br>可以较快实现在有序组的查找， 在后面的二分答案算法， 二叉搜索树（BST）， 红黑树等里面都有应用</p>
+<p>后续请在洛谷或者leetcode上完成一定量二分查找标签的题目进行巩固</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>我的人生见解</title>
+    <url>/learning-experience-blog/2026/06/18/life-insights/</url>
+    <content><![CDATA[<p>可能感觉有点中二， 不过我确实写下了自己的理解</p>
+<div class="note note-info">
+            <ol> <li><p>判断要不要去做， 做的对不对的一个方法是<br> “你以后会不会为此后悔”</p> </li> <li><p>我的人生格言是<br>“有善始者实繁， 能克终者盖寡”</p> </li> <li><p>我认为人生意义可以从两方面看<br>一是”人生的意义在于体验“<br>二是”人生的意义在于为人民服务“</p> </li> </ol> 
+          </div>
+]]></content>
+  </entry>
+  <entry>
+    <title>创建博客基础命令</title>
+    <url>/learning-experience-blog/2026/07/03/quick-start/</url>
+    <content><![CDATA[<h1 id="welcome">Welcome</h1>
+<br>
+<p>按照以下命令即可创建博客</p>
+
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">创建博客，开始在编辑器填写<br>$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">填写过程中可以用以下命令实时查看内容<br>$ hexo cl &amp;&amp; hexo s<br></code></pre></td></tr></table></figure>
+
+<h3 id="Run-server-1"><a href="#Run-server-1" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">填写完成后按以下命令发布<br>$ hexo cl &amp;&amp; hexo g -d<br></code></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
+    <title>reddit 语录</title>
+    <url>/learning-experience-blog/2026/06/23/reddit-quotes/</url>
+    <content><![CDATA[<div class="note note-info">
+            <p>A plan is better than no plan. Just do anything. And if you have doubts, remember: your biggest mistake would be to do nothing.</p> 
+          </div>]]></content>
+  </entry>
+  <entry>
     <title>来自各方的建议</title>
     <url>/learning-experience-blog/2026/06/15/suggested-opinions/</url>
     <content><![CDATA[<div class="note note-info">
@@ -118,12 +127,5 @@
     <url>/learning-experience-blog/2026/07/03/virtual-memory/</url>
     <content><![CDATA[<p>总体流程<br><img src="/learning-experience-blog/imgs/virtual-memory/1%E6%80%BB%E4%BD%93%E6%B5%81%E7%A8%8B.png" alt="alt text"><br>具体流程<br><img src="/learning-experience-blog/imgs/virtual-memory/2%E5%85%B7%E4%BD%93%E6%B5%81%E7%A8%8B.png" alt="alt text"><br>保护措施<br><img src="/learning-experience-blog/imgs/virtual-memory/3%E4%BF%9D%E6%8A%A4%E6%8E%AA%E6%96%BD.png" alt="alt text"><br>cache vs page<br><img src="/learning-experience-blog/imgs/virtual-memory/4cache%20VS%20Page.png" alt="alt text"><br>性能对比<br><img src="/learning-experience-blog/imgs/virtual-memory/%E6%80%A7%E8%83%BD%E5%BD%B1%E5%93%8Dcache%20VS%20Page.png" alt="alt text"></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>reddit 语录</title>
-    <url>/learning-experience-blog/2026/06/23/reddit-quotes/</url>
-    <content><![CDATA[<div class="note note-info">
-            <p>A plan is better than no plan. Just do anything. And if you have doubts, remember: your biggest mistake would be to do nothing.</p> 
-          </div>]]></content>
   </entry>
 </search>
