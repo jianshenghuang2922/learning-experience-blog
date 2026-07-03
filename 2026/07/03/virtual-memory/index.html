@@ -19,21 +19,37 @@
   <meta name="author" content="JianshengHuang">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="website">
-<meta property="og:title" content="归档">
-<meta property="og:url" content="http://github.io/archives/index.html">
+    <meta name="description" content="总体流程具体流程保护措施cache vs page性能对比">
+<meta property="og:type" content="article">
+<meta property="og:title" content="虚拟内存">
+<meta property="og:url" content="http://github.io/2026/07/03/virtual-memory/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="总体流程具体流程保护措施cache vs page性能对比">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://github.io/learning-experience-blog/imgs/virtual-memory/1%E6%80%BB%E4%BD%93%E6%B5%81%E7%A8%8B.png">
+<meta property="og:image" content="http://github.io/learning-experience-blog/imgs/virtual-memory/2%E5%85%B7%E4%BD%93%E6%B5%81%E7%A8%8B.png">
+<meta property="og:image" content="http://github.io/learning-experience-blog/imgs/virtual-memory/3%E4%BF%9D%E6%8A%A4%E6%8E%AA%E6%96%BD.png">
+<meta property="og:image" content="http://github.io/learning-experience-blog/imgs/virtual-memory/4cache%20VS%20Page.png">
+<meta property="og:image" content="http://github.io/learning-experience-blog/imgs/virtual-memory/%E6%80%A7%E8%83%BD%E5%BD%B1%E5%93%8Dcache%20VS%20Page.png">
+<meta property="article:published_time" content="2026-07-03T13:03:31.000Z">
+<meta property="article:modified_time" content="2026-07-03T14:40:57.178Z">
 <meta property="article:author" content="JianshengHuang">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://github.io/learning-experience-blog/imgs/virtual-memory/1%E6%80%BB%E4%BD%93%E6%B5%81%E7%A8%8B.png">
   
   
   
-  <title>归档 - Hexo</title>
+  <title>虚拟内存 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
 
 
@@ -83,7 +99,7 @@
   <header>
     
 
-<div class="header-inner" style="height: 60vh;">
+<div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/learning-experience-blog/">
@@ -292,9 +308,49 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="归档"></span>
+            <span id="subtitle" data-typed-text="虚拟内存"></span>
           
         </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2026-07-03 21:03" pubdate>
+          2026年7月3日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          27 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          1 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
 
         
       </div>
@@ -312,76 +368,162 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 7 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2026</p>
-    
-    <a href="/learning-experience-blog/2026/07/03/quick-start/" class="list-group-item list-group-item-action">
-      <time>07-03</time>
-      <div class="list-group-item-title">创建博客基础命令</div>
-    </a>
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">虚拟内存</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>总体流程<br><img src="/learning-experience-blog/imgs/virtual-memory/1%E6%80%BB%E4%BD%93%E6%B5%81%E7%A8%8B.png" srcset="/learning-experience-blog/img/loading.gif" lazyload alt="alt text"><br>具体流程<br><img src="/learning-experience-blog/imgs/virtual-memory/2%E5%85%B7%E4%BD%93%E6%B5%81%E7%A8%8B.png" srcset="/learning-experience-blog/img/loading.gif" lazyload alt="alt text"><br>保护措施<br><img src="/learning-experience-blog/imgs/virtual-memory/3%E4%BF%9D%E6%8A%A4%E6%8E%AA%E6%96%BD.png" srcset="/learning-experience-blog/img/loading.gif" lazyload alt="alt text"><br>cache vs page<br><img src="/learning-experience-blog/imgs/virtual-memory/4cache%20VS%20Page.png" srcset="/learning-experience-blog/img/loading.gif" lazyload alt="alt text"><br>性能对比<br><img src="/learning-experience-blog/imgs/virtual-memory/%E6%80%A7%E8%83%BD%E5%BD%B1%E5%93%8Dcache%20VS%20Page.png" srcset="/learning-experience-blog/img/loading.gif" lazyload alt="alt text"></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
   
-    
-    <a href="/learning-experience-blog/2026/07/03/virtual-memory/" class="list-group-item list-group-item-action">
-      <time>07-03</time>
-      <div class="list-group-item-title">虚拟内存</div>
-    </a>
   
-    
-    <a href="/learning-experience-blog/2026/06/23/reddit-quotes/" class="list-group-item list-group-item-action">
-      <time>06-23</time>
-      <div class="list-group-item-title">reddit 语录</div>
-    </a>
+</div>
+
+
+              
   
-    
-    <a href="/learning-experience-blog/2026/06/18/life-insights/" class="list-group-item list-group-item-action">
-      <time>06-18</time>
-      <div class="list-group-item-title">我的人生见解</div>
-    </a>
-  
-    
-    <a href="/learning-experience-blog/2026/06/15/suggested-opinions/" class="list-group-item list-group-item-action">
-      <time>06-15</time>
-      <div class="list-group-item-title">来自各方的建议</div>
-    </a>
-  
-    
-    <a href="/learning-experience-blog/2026/06/12/introduce-to-divide-and-conquer/" class="list-group-item list-group-item-action">
-      <time>06-12</time>
-      <div class="list-group-item-title">二分思想引入</div>
-    </a>
-  
-    
-    <a href="/learning-experience-blog/2026/06/12/introduce-to-programming/" class="list-group-item list-group-item-action">
-      <time>06-12</time>
-      <div class="list-group-item-title">基本变量， 数组， 循环</div>
-    </a>
-  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>虚拟内存</div>
+      <div>http://github.io/2026/07/03/virtual-memory/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>JianshengHuang</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2026年7月3日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/learning-experience-blog/2026/07/03/quick-start/" title="创建博客基础命令">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">创建博客基础命令</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/learning-experience-blog/2026/06/23/reddit-quotes/" title="reddit 语录">
+                        <span class="hidden-mobile">reddit 语录</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
 </div>
 
 
 
 
 
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
     
 
     
@@ -474,6 +616,163 @@
 
 
 
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    function isExpandAllEnabled() {
+      return CONFIG.toc && CONFIG.toc.expand_all === true;
+    }
+    function expandAllToc() {
+      if (!isExpandAllEnabled()) { return; }
+      jQuery('#toc-body .tocbot-is-collapsed').removeClass('tocbot-is-collapsed');
+    }
+    function updateTocToggle($li, $childList) {
+      var $toggle = $li.children('.toc-toggle');
+      if ($toggle.length === 0) { return; }
+      var collapsed = $childList.hasClass('tocbot-is-collapsed');
+      $toggle
+        .toggleClass('toc-toggle-collapsed', collapsed)
+        .toggleClass('toc-toggle-expanded', !collapsed);
+    }
+    function bindTocToggle() {
+      if (!isExpandAllEnabled()) { return; }
+      jQuery('#toc-body .toc-list-item').each(function() {
+        var $li = jQuery(this);
+        var $childList = $li.children('ol');
+        if ($childList.length === 0) {
+          if ($li.children('.toc-toggle').length === 0) {
+            $li.prepend('<span class="toc-toggle toc-toggle-placeholder" aria-hidden="true">›</span>');
+          }
+          return;
+        }
+
+        if ($li.children('.toc-toggle').length === 0) {
+          $li.prepend('<span class="toc-toggle toc-toggle-expanded" aria-hidden="true">›</span>');
+        }
+        updateTocToggle($li, $childList);
+      });
+      jQuery('#toc-body').off('click.tocToggle').on('click.tocToggle', '.toc-toggle', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var $li = jQuery(this).parent('.toc-list-item');
+        var $childList = $li.children('ol');
+        if ($childList.length === 0) { return; }
+        $childList.toggleClass('tocbot-is-collapsed');
+        updateTocToggle($li, $childList);
+      });
+      if (!window.__tocToggleObserver) {
+        window.__tocToggleObserver = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            if (mutation.type !== 'attributes' || mutation.attributeName !== 'class') { return; }
+            var $list = jQuery(mutation.target);
+            var $li = $list.parent('.toc-list-item');
+            if ($li.length === 0) { return; }
+            updateTocToggle($li, $list);
+          });
+        });
+        jQuery('#toc-body ol').each(function() {
+          window.__tocToggleObserver.observe(this, { attributes: true });
+        });
+      }
+    }
+    var tocConfig = Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc);
+    if (isExpandAllEnabled()) {
+      tocConfig.collapseDepth = 6;
+    }
+    window.tocbot.init(tocConfig);
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+    expandAllToc();
+    bindTocToggle();
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+        expandAllToc();
+        bindTocToggle();
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
 
   <script  src="/learning-experience-blog/js/local-search.js" ></script>
 

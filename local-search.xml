@@ -4,6 +4,32 @@
   
   
   <entry>
+    <title>创建博客基础命令</title>
+    <link href="/learning-experience-blog/2026/07/03/quick-start/"/>
+    <url>/learning-experience-blog/2026/07/03/quick-start/</url>
+    
+    <content type="html"><![CDATA[<h1 id="welcome">Welcome</h1><p>按照以下命令即可创建博客</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">创建博客，开始在编辑器填写<br>$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">填写过程中可以用以下命令实时查看内容<br>$ hexo cl &amp;&amp; hexo s<br></code></pre></td></tr></table></figure><h3 id="Run-server-1"><a href="#Run-server-1" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">填写完成后按以下命令发布<br>$ hexo cl &amp;&amp; hexo g -d<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>虚拟内存</title>
+    <link href="/learning-experience-blog/2026/07/03/virtual-memory/"/>
+    <url>/learning-experience-blog/2026/07/03/virtual-memory/</url>
+    
+    <content type="html"><![CDATA[<p>总体流程<br><img src="/learning-experience-blog/imgs/virtual-memory/1%E6%80%BB%E4%BD%93%E6%B5%81%E7%A8%8B.png" alt="alt text"><br>具体流程<br><img src="/learning-experience-blog/imgs/virtual-memory/2%E5%85%B7%E4%BD%93%E6%B5%81%E7%A8%8B.png" alt="alt text"><br>保护措施<br><img src="/learning-experience-blog/imgs/virtual-memory/3%E4%BF%9D%E6%8A%A4%E6%8E%AA%E6%96%BD.png" alt="alt text"><br>cache vs page<br><img src="/learning-experience-blog/imgs/virtual-memory/4cache%20VS%20Page.png" alt="alt text"><br>性能对比<br><img src="/learning-experience-blog/imgs/virtual-memory/%E6%80%A7%E8%83%BD%E5%BD%B1%E5%93%8Dcache%20VS%20Page.png" alt="alt text"></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>reddit 语录</title>
     <link href="/learning-experience-blog/2026/06/23/reddit-quotes/"/>
     <url>/learning-experience-blog/2026/06/23/reddit-quotes/</url>
@@ -61,19 +87,6 @@
     <url>/learning-experience-blog/2026/06/12/introduce-to-programming/</url>
     
     <content type="html"><![CDATA[<div class="note note-info">            <p>基础数据结构：<br>    - 基本类型变量<br>    - –&gt; 线性： 数组<br>    - –&gt; 非线性： 树（图）</p> <p>int, bool, char, string, double<br>比如<br>int a &#x3D; 5<br>bool flag &#x3D; true<br>char ch &#x3D; ‘c’<br>string str &#x3D; “Hello World”<br>double b &#x3D; 3.14</p>           </div><ul><li>我们先从线性数组开始<br>-假如我们要存储1到100这100个数字<br>-要存储多个同类型数据：</li><li>int a &#x3D; 1</li><li>int b &#x3D; 2</li><li>int c &#x3D; 3</li><li>int d &#x3D; 4</li><li>int e &#x3D; 5</li><li>……</li></ul><pre><code class="hljs">-有100个数据， 这么写将会很麻烦， 因为我们引入了很多变量， 我们不希望有这么多变量来增加我们的负担-所以我们引入数组来存储同类型的变量--    int a[100];-   从零开始作为起始下标-    a[0] = 1-    a[1] = 2-   a[2] = 3-    a[3] = 4-    a[4] = 5-    a[5] = 6-    ......-你发现了， 这样在存储数据上方便了很多， 不需要引入多个变量- 还可以再优化别的方面吗？- 比如， 我们明显发现了这个数组是有规律的- 为了避免重复书写， 我们引入循环的概念- for index from 0 to 99-  a[index] = index + 1-  在c 或 c++ 里就是-  for (int i = 0; i &lt; 100; i += 1) &#123;-      a[i] = i + 1;-  &#125;</code></pre><div class="note note-info">            <p>-练习1<br>    -假如我要输入一个整数n （n &gt;&#x3D; 1）<br>    -然后输入 n个数， 求这些数的平均值（向下取整）， 最大值， 最小值</p> <pre><code class="hljs">/** 提示： 可以用 avg maxn， minn, 来表示变量 */ </code></pre> <p>-练习2<br>    -把练习1里面的这些数每个数字加1, 然后再输出</p>           </div>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>创建博客基础命令</title>
-    <link href="/learning-experience-blog/2026/06/12/quick-start/"/>
-    <url>/learning-experience-blog/2026/06/12/quick-start/</url>
-    
-    <content type="html"><![CDATA[<h1 id="welcome">Welcome</h1><p>按照以下命令即可创建博客</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">创建博客，开始在编辑器填写<br>$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">填写过程中可以用以下命令实时查看内容<br>$ hexo cl &amp;&amp; hexo s<br></code></pre></td></tr></table></figure><h3 id="Run-server-1"><a href="#Run-server-1" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">填写完成后按以下命令发布<br>$ hexo cl &amp;&amp; hexo g -d<br></code></pre></td></tr></table></figure>]]></content>
     
     
     
