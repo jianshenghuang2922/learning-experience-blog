@@ -30,6 +30,28 @@
 ]]></content>
   </entry>
   <entry>
+    <title>创建博客基础命令</title>
+    <url>/learning-experience-blog/2026/07/03/quick-start/</url>
+    <content><![CDATA[<h1 id="welcome">Welcome</h1>
+<p>按照以下命令即可创建博客</p>
+
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">创建博客，开始在编辑器填写<br>$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">填写过程中可以用以下命令实时查看内容<br>$ hexo cl &amp;&amp; hexo s<br></code></pre></td></tr></table></figure>
+
+<h3 id="Run-server-1"><a href="#Run-server-1" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">填写完成后按以下命令发布<br>$ hexo cl &amp;&amp; hexo g -d<br></code></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
+    <title>我的人生见解</title>
+    <url>/learning-experience-blog/2026/06/18/life-insights/</url>
+    <content><![CDATA[<div class="note note-info">
+            <ol> <li><p>判断要不要去做， 做的对不对的一个方法是<br> “你以后会不会为此后悔”</p> </li> <li><p>我的人生格言是<br>“有善始者实繁， 能克终者盖寡”</p> </li> <li><p>我认为人生意义可以从两方面看<br>一是”人生的意义在于体验“<br>二是”人生的意义在于为人民服务“</p> </li> </ol> 
+          </div>
+]]></content>
+  </entry>
+  <entry>
     <title>基本变量， 数组， 循环</title>
     <url>/learning-experience-blog/2026/06/12/introduce-to-programming/</url>
     <content><![CDATA[<div class="note note-info">
@@ -76,35 +98,6 @@
           </div>]]></content>
   </entry>
   <entry>
-    <title>我的人生见解</title>
-    <url>/learning-experience-blog/2026/06/18/life-insights/</url>
-    <content><![CDATA[<div class="note note-info">
-            <ol> <li><p>判断要不要去做， 做的对不对的一个方法是<br> “你以后会不会为此后悔”</p> </li> <li><p>我的人生格言是<br>“有善始者实繁， 能克终者盖寡”</p> </li> <li><p>我认为人生意义可以从两方面看<br>一是”人生的意义在于体验“<br>二是”人生的意义在于为人民服务“</p> </li> </ol> 
-          </div>
-]]></content>
-  </entry>
-  <entry>
-    <title>创建博客基础命令</title>
-    <url>/learning-experience-blog/2026/07/03/quick-start/</url>
-    <content><![CDATA[<h1 id="welcome">Welcome</h1>
-<p>按照以下命令即可创建博客</p>
-
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">创建博客，开始在编辑器填写<br>$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">填写过程中可以用以下命令实时查看内容<br>$ hexo cl &amp;&amp; hexo s<br></code></pre></td></tr></table></figure>
-
-<h3 id="Run-server-1"><a href="#Run-server-1" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">填写完成后按以下命令发布<br>$ hexo cl &amp;&amp; hexo g -d<br></code></pre></td></tr></table></figure>
-
-]]></content>
-  </entry>
-  <entry>
-    <title>reddit 语录</title>
-    <url>/learning-experience-blog/2026/06/23/reddit-quotes/</url>
-    <content><![CDATA[<div class="note note-info">
-            <p>A plan is better than no plan. Just do anything. And if you have doubts, remember: your biggest mistake would be to do nothing.</p> 
-          </div>]]></content>
-  </entry>
-  <entry>
     <title>来自各方的建议</title>
     <url>/learning-experience-blog/2026/06/15/suggested-opinions/</url>
     <content><![CDATA[<div class="note note-info">
@@ -125,5 +118,12 @@
     <url>/learning-experience-blog/2026/07/03/virtual-memory/</url>
     <content><![CDATA[<p>总体流程<br><img src="/learning-experience-blog/imgs/virtual-memory/1%E6%80%BB%E4%BD%93%E6%B5%81%E7%A8%8B.png" alt="alt text"><br>具体流程<br><img src="/learning-experience-blog/imgs/virtual-memory/2%E5%85%B7%E4%BD%93%E6%B5%81%E7%A8%8B.png" alt="alt text"><br>保护措施<br><img src="/learning-experience-blog/imgs/virtual-memory/3%E4%BF%9D%E6%8A%A4%E6%8E%AA%E6%96%BD.png" alt="alt text"><br>cache vs page<br><img src="/learning-experience-blog/imgs/virtual-memory/4cache%20VS%20Page.png" alt="alt text"><br>性能对比<br><img src="/learning-experience-blog/imgs/virtual-memory/%E6%80%A7%E8%83%BD%E5%BD%B1%E5%93%8Dcache%20VS%20Page.png" alt="alt text"></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>reddit 语录</title>
+    <url>/learning-experience-blog/2026/06/23/reddit-quotes/</url>
+    <content><![CDATA[<div class="note note-info">
+            <p>A plan is better than no plan. Just do anything. And if you have doubts, remember: your biggest mistake would be to do nothing.</p> 
+          </div>]]></content>
   </entry>
 </search>
