@@ -19,12 +19,12 @@
   <meta name="author" content="JianshengHuang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="总体流程具体流程保护措施cache vs page性能对比 CS61C的笔记https:&#x2F;&#x2F;notes.cs61c.org&#x2F;content&#x2F;vm&#x2F;">
+    <meta name="description" content="总体流程具体流程保护措施cache vs page性能对比">
 <meta property="og:type" content="article">
 <meta property="og:title" content="虚拟内存">
 <meta property="og:url" content="http://github.io/2026/07/03/virtual-memory/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="总体流程具体流程保护措施cache vs page性能对比 CS61C的笔记https:&#x2F;&#x2F;notes.cs61c.org&#x2F;content&#x2F;vm&#x2F;">
+<meta property="og:site_name" content="JianshengHuang&#39;blogs">
+<meta property="og:description" content="总体流程具体流程保护措施cache vs page性能对比">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://github.io/learning-experience-blog/imgs/virtual-memory/1%E6%80%BB%E4%BD%93%E6%B5%81%E7%A8%8B.png">
 <meta property="og:image" content="http://github.io/learning-experience-blog/imgs/virtual-memory/2%E5%85%B7%E4%BD%93%E6%B5%81%E7%A8%8B.png">
@@ -32,14 +32,14 @@
 <meta property="og:image" content="http://github.io/learning-experience-blog/imgs/virtual-memory/4cache%20VS%20Page.png">
 <meta property="og:image" content="http://github.io/learning-experience-blog/imgs/virtual-memory/%E6%80%A7%E8%83%BD%E5%BD%B1%E5%93%8Dcache%20VS%20Page.png">
 <meta property="article:published_time" content="2026-07-03T13:03:31.000Z">
-<meta property="article:modified_time" content="2026-07-03T14:54:03.776Z">
+<meta property="article:modified_time" content="2026-07-03T14:55:50.116Z">
 <meta property="article:author" content="JianshengHuang">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://github.io/learning-experience-blog/imgs/virtual-memory/1%E6%80%BB%E4%BD%93%E6%B5%81%E7%A8%8B.png">
   
   
   
-  <title>虚拟内存 - Hexo</title>
+  <title>虚拟内存 - JianshengHuang&#39;blogs</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -302,7 +302,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/learning-experience-blog/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/learning-experience-blog/imgs/%E3%80%90%E5%93%B2%E9%A3%8E%E5%A3%81%E7%BA%B8%E3%80%91eva-%E5%8D%A1%E9%80%9A%E4%BA%BA%E7%89%A9.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -331,7 +331,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          70 字
+          27 字
         
       </span>
     
@@ -387,7 +387,6 @@
               <div class="markdown-body">
                 
                 <p>总体流程<br><img src="/learning-experience-blog/imgs/virtual-memory/1%E6%80%BB%E4%BD%93%E6%B5%81%E7%A8%8B.png" srcset="/learning-experience-blog/img/loading.gif" lazyload alt="总体流程"><br>具体流程<br><img src="/learning-experience-blog/imgs/virtual-memory/2%E5%85%B7%E4%BD%93%E6%B5%81%E7%A8%8B.png" srcset="/learning-experience-blog/img/loading.gif" lazyload alt="具体流程"><br>保护措施<br><img src="/learning-experience-blog/imgs/virtual-memory/3%E4%BF%9D%E6%8A%A4%E6%8E%AA%E6%96%BD.png" srcset="/learning-experience-blog/img/loading.gif" lazyload alt="保护措施"><br>cache vs page<br><img src="/learning-experience-blog/imgs/virtual-memory/4cache%20VS%20Page.png" srcset="/learning-experience-blog/img/loading.gif" lazyload alt="cache vs page"><br>性能对比<br><img src="/learning-experience-blog/imgs/virtual-memory/%E6%80%A7%E8%83%BD%E5%BD%B1%E5%93%8Dcache%20VS%20Page.png" srcset="/learning-experience-blog/img/loading.gif" lazyload alt="性能对比"></p>
-<p>CS61C的笔记<br><a target="_blank" rel="noopener" href="https://notes.cs61c.org/content/vm/">https://notes.cs61c.org/content/vm/</a></p>
 
                 
               </div>
@@ -450,7 +449,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/learning-experience-blog/2026/07/03/quick-start/" title="创建博客基础命令">
+                      <a href="/learning-experience-blog/2026/07/10/quick-start/" title="创建博客基础命令">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">创建博客基础命令</span>
                         <span class="visible-mobile">上一篇</span>
