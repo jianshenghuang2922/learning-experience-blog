@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>Agent</title>
+    <link href="/learning-experience-blog/2026/07/11/ai-learning/"/>
+    <url>/learning-experience-blog/2026/07/11/ai-learning/</url>
+    
+    <content type="html"><![CDATA[<div class="note note-info">            <h1 id="what-is-an-ai-agent"> What is an AI Agent</h1> <div class="note note-info">             <p>Q: What is an AI agent?</p> <p>A: An AI agent is a digital worker that can understand instructions and take actions in order to complete tasks.</p>            </div> <div class="note note-info">             <p>Q: What is the difference between chatbots and agents?<br>A: Instead of just fancy chatbots, agents are actual digital workders who can search through database, update spreadsheets, send emals, book appointments, generate hold documents and much much more.</p>            </div> <div class="note note-info">             <p>Thus, using agents is like employing,<br>AI agents equal new employees, you need to define their role and responsibility.</p> <ol> <li>Explain roles and responsibility</li> <li>Give access to your systems</li> <li>Trust them to handle tasks</li> </ol>            </div> <div class="note note-info">             <p>Q: The advantage of using agents?<br>A: </p> <ol> <li>Working 24&#x2F;7</li> <li>Can be duplicated</li> <li>Cost less than a human employee</li> </ol>            </div>          </div><div class="note note-info">            <h1 id="how-to-build-an-agent"> How to build an Agent</h1> <div class="note note-info">             <p>AI Agent Components</p> <ol> <li>LLM(Brain)</li> <li>Prompting(Instructions)</li> <li>Memory</li> <li>External Knowledge</li> <li>Tools</li> </ol> <img src="/learning-experience-blog/imgs/ai/agentServeFlow.png" class="" width="600" title="ServeFlow">  <p>To build an agent, we mainly focus on using different combination of these three ingredients:</p> <ol> <li>External Knowledge</li> <li>Tools</li> <li>Prompting</li> </ol> <p>And the advanced Tool Use:<br><img src="/learning-experience-blog/imgs/ai/multiAgent.png" class="" width="600" title="MultiAgent"></p>            </div> <div class="note note-info">             <p>API is powerful. What makes it a revolution is that we can explain to our agent how to use API just by explaining how the API works in natural language. And this is where schemas come in.</p>  <p>Schemas: API instruction manuals for<br>AI Agent comprehension:</p> <ol> <li>What the tool does</li> <li>What information it needs as input</li> <li>What information to expect as output</li> </ol>            </div> <div class="note note-info">             <p>Two types of Agents</p> <ol> <li>Conversational agents: interact with human directly</li> <li>Automated agents: need some info like a submit to trigger instead of the direct interaction with human</li> </ol>            </div>          </div><div class="note note-info">                      </div>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>笑话怪谈</title>
     <link href="/learning-experience-blog/2026/07/10/jokes/"/>
     <url>/learning-experience-blog/2026/07/10/jokes/</url>

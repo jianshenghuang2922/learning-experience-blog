@@ -30,6 +30,27 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Agent</title>
+    <url>/learning-experience-blog/2026/07/11/ai-learning/</url>
+    <content><![CDATA[<div class="note note-info">
+            <h1 id="what-is-an-ai-agent"> What is an AI Agent</h1> <div class="note note-info">             <p>Q: What is an AI agent?</p> <p>A: An AI agent is a digital worker that can understand instructions and take actions in order to complete tasks.</p>            </div> <div class="note note-info">             <p>Q: What is the difference between chatbots and agents?<br>A: Instead of just fancy chatbots, agents are actual digital workders who can search through database, update spreadsheets, send emals, book appointments, generate hold documents and much much more.</p>            </div> <div class="note note-info">             <p>Thus, using agents is like employing,<br>AI agents equal new employees, you need to define their role and responsibility.</p> <ol> <li>Explain roles and responsibility</li> <li>Give access to your systems</li> <li>Trust them to handle tasks</li> </ol>            </div> <div class="note note-info">             <p>Q: The advantage of using agents?<br>A: </p> <ol> <li>Working 24&#x2F;7</li> <li>Can be duplicated</li> <li>Cost less than a human employee</li> </ol>            </div>
+          </div>
+
+<div class="note note-info">
+            <h1 id="how-to-build-an-agent"> How to build an Agent</h1> <div class="note note-info">             <p>AI Agent Components</p> <ol> <li>LLM(Brain)</li> <li>Prompting(Instructions)</li> <li>Memory</li> <li>External Knowledge</li> <li>Tools</li> </ol> <img src="/learning-experience-blog/imgs/ai/agentServeFlow.png" class="" width="600" title="ServeFlow">  <p>To build an agent, we mainly focus on using different combination of these three ingredients:</p> <ol> <li>External Knowledge</li> <li>Tools</li> <li>Prompting</li> </ol> <p>And the advanced Tool Use:<br><img src="/learning-experience-blog/imgs/ai/multiAgent.png" class="" width="600" title="MultiAgent"></p>            </div> <div class="note note-info">             <p>API is powerful. What makes it a revolution is that we can explain to our agent how to use API just by explaining how the API works in natural language. And this is where schemas come in.</p>  <p>Schemas: API instruction manuals for<br>AI Agent comprehension:</p> <ol> <li>What the tool does</li> <li>What information it needs as input</li> <li>What information to expect as output</li> </ol>            </div> <div class="note note-info">             <p>Two types of Agents</p> <ol> <li>Conversational agents: interact with human directly</li> <li>Automated agents: need some info like a submit to trigger instead of the direct interaction with human</li> </ol>            </div>
+          </div>
+<div class="note note-info">
+            
+          </div>]]></content>
+  </entry>
+  <entry>
+    <title>笑话怪谈</title>
+    <url>/learning-experience-blog/2026/07/10/jokes/</url>
+    <content><![CDATA[<p>美团面了大概四十分钟，全程细节拷打，面完汗流浃背，感觉过不了了，看面经吧<br>1。 说说你平时是怎么送餐的？直接傻瓜式回答拧车把就走了<br>2. 如果送餐途中下雨了，你会怎么办？回答找个地方躲着，然后就问我那订单超时怎么办，答不出来了。。。<br>3. 如果有个地方爆单，同时有多个不同楼层但是是同一栋楼的地方下单，可能是什么情况？答不出来，乱蒙了个可能在开派对，有没有大佬知道的<br>4. 如果到了商家，但商家还没把餐备好，你会怎么做？直接回答干等着了，然后感觉这样回答不太好，又补了句我可能会催催商家。。。<br>5. 实际送餐过程中有没有考虑过使用多部手机？我说配送账号就一个，没必要使用多部手机。面试官好像不太满意<br>6. 送到餐了，但客户一直不来取餐，你会怎么办？阻塞等待吗？我说会打电话催促客户，客户一直不来的话就把餐放到地点，然后拍照走人，然后问我这样做有没有考虑过外卖丢失的情况，外卖丢失怎么办，完了，又掉进坑了<br>7. 有没有送错餐的情况？我说实际没遇过这种场景，面试官又不太满意了。。。搞不懂，一定要有实际解决过出错的经验吗。。。没出错不是更好吗。。。<br>8. 餐箱满了，但你又接单了，餐箱放不下了，出现了Out Of Box，如何解决？我说一般我会每次接单前检查下餐箱容量，有空间才会接新的单，又追问这样会不会影响接单效率，如果被其它骑手抢单了怎么办？完了，又又掉进坑了。。。<br>9. 送餐过程有没有把外卖进行分类？我说我一般电动车前后有两个餐箱，前面放带有汤水易撒的，后面放比较干的外卖。总算是能答出一题了<br>10. 看了下我送的最快的一单，问我为什么那一单10s就送达了。因为客户就在店里面，当堂点外卖是为了用券。。。我这个订单是不是有点水了，但鼠鼠是真没什么订单拿得出手了</p>
+<p>做了道算法，一道贪心，给定单子信息，寻找最短配送路线，之前刷过，用c++10分钟a出来了</p>
+]]></content>
+  </entry>
+  <entry>
     <title>我的人生见解</title>
     <url>/learning-experience-blog/2026/06/18/life-insights/</url>
     <content><![CDATA[<p>可能感觉有点中二， 不过我确实写下了自己的理解</p>
@@ -56,18 +77,17 @@ $ hexo cl &amp;&amp; hexo g -d
 ]]></content>
   </entry>
   <entry>
-    <title>笑话怪谈</title>
-    <url>/learning-experience-blog/2026/07/10/jokes/</url>
-    <content><![CDATA[<p>美团面了大概四十分钟，全程细节拷打，面完汗流浃背，感觉过不了了，看面经吧<br>1。 说说你平时是怎么送餐的？直接傻瓜式回答拧车把就走了<br>2. 如果送餐途中下雨了，你会怎么办？回答找个地方躲着，然后就问我那订单超时怎么办，答不出来了。。。<br>3. 如果有个地方爆单，同时有多个不同楼层但是是同一栋楼的地方下单，可能是什么情况？答不出来，乱蒙了个可能在开派对，有没有大佬知道的<br>4. 如果到了商家，但商家还没把餐备好，你会怎么做？直接回答干等着了，然后感觉这样回答不太好，又补了句我可能会催催商家。。。<br>5. 实际送餐过程中有没有考虑过使用多部手机？我说配送账号就一个，没必要使用多部手机。面试官好像不太满意<br>6. 送到餐了，但客户一直不来取餐，你会怎么办？阻塞等待吗？我说会打电话催促客户，客户一直不来的话就把餐放到地点，然后拍照走人，然后问我这样做有没有考虑过外卖丢失的情况，外卖丢失怎么办，完了，又掉进坑了<br>7. 有没有送错餐的情况？我说实际没遇过这种场景，面试官又不太满意了。。。搞不懂，一定要有实际解决过出错的经验吗。。。没出错不是更好吗。。。<br>8. 餐箱满了，但你又接单了，餐箱放不下了，出现了Out Of Box，如何解决？我说一般我会每次接单前检查下餐箱容量，有空间才会接新的单，又追问这样会不会影响接单效率，如果被其它骑手抢单了怎么办？完了，又又掉进坑了。。。<br>9. 送餐过程有没有把外卖进行分类？我说我一般电动车前后有两个餐箱，前面放带有汤水易撒的，后面放比较干的外卖。总算是能答出一题了<br>10. 看了下我送的最快的一单，问我为什么那一单10s就送达了。因为客户就在店里面，当堂点外卖是为了用券。。。我这个订单是不是有点水了，但鼠鼠是真没什么订单拿得出手了</p>
-<p>做了道算法，一道贪心，给定单子信息，寻找最短配送路线，之前刷过，用c++10分钟a出来了</p>
-]]></content>
-  </entry>
-  <entry>
     <title>reddit 语录</title>
     <url>/learning-experience-blog/2026/06/23/reddit-quotes/</url>
     <content><![CDATA[<div class="note note-info">
             <p>A plan is better than no plan. Just do anything. And if you have doubts, remember: your biggest mistake would be to do nothing.</p> 
           </div>]]></content>
+  </entry>
+  <entry>
+    <title>虚拟内存</title>
+    <url>/learning-experience-blog/2026/07/03/virtual-memory/</url>
+    <content><![CDATA[<p>总体流程<br><img src="/learning-experience-blog/imgs/virtual-memory/1%E6%80%BB%E4%BD%93%E6%B5%81%E7%A8%8B.png" alt="总体流程"><br>具体流程<br><img src="/learning-experience-blog/imgs/virtual-memory/2%E5%85%B7%E4%BD%93%E6%B5%81%E7%A8%8B.png" alt="具体流程"><br>保护措施<br><img src="/learning-experience-blog/imgs/virtual-memory/3%E4%BF%9D%E6%8A%A4%E6%8E%AA%E6%96%BD.png" alt="保护措施"><br>cache vs page<br><img src="/learning-experience-blog/imgs/virtual-memory/4cache%20VS%20Page.png" alt="cache vs page"><br>性能对比<br><img src="/learning-experience-blog/imgs/virtual-memory/%E6%80%A7%E8%83%BD%E5%BD%B1%E5%93%8Dcache%20VS%20Page.png" alt="性能对比"></p>
+]]></content>
   </entry>
   <entry>
     <title>来自各方的建议</title>
@@ -84,11 +104,5 @@ $ hexo cl &amp;&amp; hexo g -d
 <div class="note note-info">
             <p>From myself<br>在csdiy.wiki上学习， 修炼内功<br>听取学长和其他人的项目和开发上的建议，<br>拓展学习方向和锻炼能力</p> 
           </div>]]></content>
-  </entry>
-  <entry>
-    <title>虚拟内存</title>
-    <url>/learning-experience-blog/2026/07/03/virtual-memory/</url>
-    <content><![CDATA[<p>总体流程<br><img src="/learning-experience-blog/imgs/virtual-memory/1%E6%80%BB%E4%BD%93%E6%B5%81%E7%A8%8B.png" alt="总体流程"><br>具体流程<br><img src="/learning-experience-blog/imgs/virtual-memory/2%E5%85%B7%E4%BD%93%E6%B5%81%E7%A8%8B.png" alt="具体流程"><br>保护措施<br><img src="/learning-experience-blog/imgs/virtual-memory/3%E4%BF%9D%E6%8A%A4%E6%8E%AA%E6%96%BD.png" alt="保护措施"><br>cache vs page<br><img src="/learning-experience-blog/imgs/virtual-memory/4cache%20VS%20Page.png" alt="cache vs page"><br>性能对比<br><img src="/learning-experience-blog/imgs/virtual-memory/%E6%80%A7%E8%83%BD%E5%BD%B1%E5%93%8Dcache%20VS%20Page.png" alt="性能对比"></p>
-]]></content>
   </entry>
 </search>
