@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>计算机组成原理</title>
+    <link href="/learning-experience-blog/2026/07/14/computer-architecture/"/>
+    <url>/learning-experience-blog/2026/07/14/computer-architecture/</url>
+    
+    <content type="html"><![CDATA[<h1 id="计算机系统概论">计算机系统概论</h1><h2>计算机工作原理及层次结构分析</h2>工作原理： 存储程序和程序控制<p>组成： 软件+硬件</p><p><img src="/learning-experience-blog/imgs/%E8%AE%A1%E7%BB%84/%E7%A1%AC%E4%BB%B6.png" alt="硬件结构"><br><img src="/learning-experience-blog/imgs/%E8%AE%A1%E7%BB%84/%20%E5%AD%98%E5%82%A8%E5%99%A8.png" alt="存储器"><br><img src="/learning-experience-blog/imgs/%E8%AE%A1%E7%BB%84/%E8%AE%A1%E7%AE%97%E5%9C%B0%E5%9D%80%E7%BA%BF.png" alt="对应计算"></p><img src="/learning-experience-blog/imgs/%E8%AE%A1%E7%BB%84/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84.png" class="" width="200" title="层次结构" alt="层次结构"><h2>性能评价</h2>    非时间指标： 机器字长， 主存容量， 存储带宽， 总线宽度    时间指标： 主频f/时间周期T, 外频（CPU与主板）， 倍频    CPU主频 = 外频 * 倍频    CPU时间 = N * CPI * T<h1 id="数据表示">数据表示</h1><h2>机器数</h2><p>原码、反码、补码是计算机中用来表示带符号整数（正数和负数）的三种编码方式。 它们的核心作用是解决计算机硬件在处理减法运算和负数时的复杂性，通过引入补码，计算机可以将减法转化为加法来处理。计算机内部的整数运算全部以补码形式表示和运算。正数三码合一；负数求补码遵循“原码 -> 符号位不变数值位取反（反码） -> 加 1（补码）”的规律。</p><img src="/learning-experience-blog/imgs/%E8%AE%A1%E7%BB%84/%E6%9C%BA%E5%99%A8%E6%95%B0.png" class="" width="800"><img src="/learning-experience-blog/imgs/%E8%AE%A1%E7%BB%84/%E5%8E%9F%E7%A0%81-%E5%8F%8D%E7%A0%81-%E8%A1%A5%E7%A0%81.png" class="" width="800"><p>此外，还有移码： 在补码的基础上，把最高位（符号位）取反。（无论正数还是负数，都只改符号位）。移码之所以存在，是为了解决补码在某些特定条件下比较大小效率低的问题<p>移码的特点是：真值越大的数，其移码的二进制形式也越大。</p></p><img src="/learning-experience-blog/imgs/%E8%AE%A1%E7%BB%84/%E5%9B%9B%E7%A7%8D%E6%9C%BA%E5%99%A8%E7%A0%81%E6%80%BB%E7%BB%93.png" class="" width="800">]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Agent</title>
     <link href="/learning-experience-blog/2026/07/11/ai-learning/"/>
     <url>/learning-experience-blog/2026/07/11/ai-learning/</url>
@@ -73,7 +86,7 @@
     <link href="/learning-experience-blog/2026/06/18/life-insights/"/>
     <url>/learning-experience-blog/2026/06/18/life-insights/</url>
     
-    <content type="html"><![CDATA[<p>可能感觉有点中二， 不过我确实写下了自己的理解</p><div class="note note-info">            <ol> <li><p>判断要不要去做， 做的对不对的一个方法是<br> “你以后会不会为此后悔”</p> </li> <li><p>我的人生格言是<br>“有善始者实繁， 能克终者盖寡”</p> </li> <li><p>我认为人生意义可以从两方面看<br>一是”人生的意义在于体验“<br>二是”人生的意义在于为人民服务“</p> </li> <li><p>当你不知道做什么事情（迷茫）时， 可以考虑<br>两个方面：</p> <ol> <li>那些必须要做的事， 迟早要做的事</li> <li>相比于自底向上，自顶向下的去看</li> </ol> </li> </ol>           </div>]]></content>
+    <content type="html"><![CDATA[<p>我觉得最受用的一段话放在“来自各方的建议”第一段里面， 下面是我自己对自己人生的理解。<br>可能感觉有点中二， 不过我确实写下了自己的理解</p><div class="note note-info">            <ol> <li><p>判断要不要去做， 做的对不对的一个方法是<br> “你以后会不会为此后悔”</p> </li> <li><p>我的人生格言是<br>“有善始者实繁， 能克终者盖寡”</p> </li> <li><p>我认为人生意义可以从两方面看<br>一是”人生的意义在于体验“<br>二是”人生的意义在于为人民服务“</p> </li> <li><p>当你不知道做什么事情（迷茫）时， 可以考虑<br>两个方面：</p> <ol> <li>那些必须要做的事， 迟早要做的事</li> <li>相比于自底向上，自顶向下的去看</li> </ol> </li> </ol>           </div>]]></content>
     
     
     
