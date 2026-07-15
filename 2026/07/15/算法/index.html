@@ -27,7 +27,7 @@
 <meta property="og:description" content="前缀和， 差分， 离散化 前缀和 优点是多次区间查询每次都是O（1） 123456for (int i &#x3D; 1; i &lt;&#x3D; n; i +&#x3D; 1) &#123;    cin &gt;&gt; a[i];    pre[i] &#x3D; pre[i-1] + a[i];&#125;[l, r] -&gt; pre[r] - pre[l-1] 差分 优点在多次区间修改每次都是O（1）  左闭右闭 12">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-07-15T08:28:41.000Z">
-<meta property="article:modified_time" content="2026-07-15T09:51:17.597Z">
+<meta property="article:modified_time" content="2026-07-15T10:28:09.972Z">
 <meta property="article:author" content="JianshengHuang">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -325,7 +325,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          824 字
+          998 字
         
       </span>
     
@@ -336,7 +336,7 @@
         
         
         
-          7 分钟
+          9 分钟
         
       </span>
     
@@ -388,9 +388,9 @@
 优点在多次区间修改每次都是O（1）
 
 <p>左闭右闭</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// [l, r] + c</span><br>dif[l] += c;<br>dif[r<span class="hljs-number">+1</span>] -= c;<br><br><span class="hljs-comment">// [x1, y1]-&gt; [x2, y2] += c</span><br>dif[x1][y1] += c;<br>dif[x1][y2<span class="hljs-number">+1</span>] -= c;<br>dif[x2<span class="hljs-number">+1</span>][y1] -= c;<br>dif[x2<span class="hljs-number">+1</span>][y2<span class="hljs-number">+1</span>] += c;<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// [l, r] + c</span><br>dif[l] += c;<br>dif[r<span class="hljs-number">+1</span>] -= c;<br><br>cur[i] = cur[i<span class="hljs-number">-1</span>] + dif[i];<br><br><span class="hljs-comment">// [x1, y1]-&gt; [x2, y2] += c</span><br>dif[x1][y1] += c;<br>dif[x1][y2<span class="hljs-number">+1</span>] -= c;<br>dif[x2<span class="hljs-number">+1</span>][y1] -= c;<br>dif[x2<span class="hljs-number">+1</span>][y2<span class="hljs-number">+1</span>] += c;<br><br><br>cur[i][j] = cur[i<span class="hljs-number">-1</span>][j] + cur[i][j<span class="hljs-number">-1</span>] - cur[i<span class="hljs-number">-1</span>][j<span class="hljs-number">-1</span>] + dif[i][j]<br></code></pre></td></tr></table></figure>
 <p>左闭右开</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs cpp">直接 <br>dif[l] += <span class="hljs-number">1</span>;<br>dif[r] += <span class="hljs-number">1</span>;<br><br>dif[X1][Y1] += <span class="hljs-number">1</span>;<br>dif[X2][Y1] -= <span class="hljs-number">1</span>; <br>dif[X1][Y2] -= <span class="hljs-number">1</span>;<br>dif[X2][Y2] += <span class="hljs-number">1</span>;<br></code></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs cpp">直接 <br>dif[l] += <span class="hljs-number">1</span>;<br>dif[r] += <span class="hljs-number">1</span>;<br><br>cur[i] = cur[i<span class="hljs-number">-1</span>] + dif[i]<br><br>dif[X1][Y1] += <span class="hljs-number">1</span>;<br>dif[X2][Y1] -= <span class="hljs-number">1</span>; <br>dif[X1][Y2] -= <span class="hljs-number">1</span>;<br>dif[X2][Y2] += <span class="hljs-number">1</span>;<br><br>cur[i][j] = cur[i<span class="hljs-number">-1</span>][j] + cur[i][j<span class="hljs-number">-1</span>] - cur[i<span class="hljs-number">-1</span>][j<span class="hljs-number">-1</span>] + dif[i][j]<br></code></pre></td></tr></table></figure>
 
 <h2>离散化</h2>
 如果下标不是非负整数 ->采用离散化（记录排名（一定是非负整数）来代替下标）
