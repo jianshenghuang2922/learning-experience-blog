@@ -19,33 +19,21 @@
   <meta name="author" content="JianshengHuang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="计算机系统概论二进制的接收：低电频&#x2F;高电频 -&gt; 0&#x2F;1电路板针脚 -&gt; 接收电信号 计算机工作原理工作原理： 存储程序和程序控制 组成： 软件+硬件 CPU &#x3D; 运算器 + 控制器以前计算机以运算器为核心， 现代计算机以存储器为核心 计算机工作过程 各硬件作用总结 性能评价非时间指标： 机器字长， 主存容量， 存储带宽， 总线宽度 时间指标： 主频f&#x2F;时间周期T,">
+    <meta name="description" content="-上一节中， 我们知道多个同类型的变量可以用数组存储，-而重要的数据可以单独用一个变量存储。                            -现在我们来玩一个游戏：-假如我从0到100里面选了一个数字， 你来猜我选的数字我根据你猜的数字告诉你猜大还是猜小了-怎么样可以尽可能快的猜到？              思路一从0到100, 一个一个猜， 很显然， 最后肯定">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计算机组成原理">
-<meta property="og:url" content="http://github.io/2026/07/14/computer-architecture/index.html">
+<meta property="og:title" content="二分思想引入">
+<meta property="og:url" content="http://github.io/2026/06/12/%E4%BA%8C%E5%88%86/index.html">
 <meta property="og:site_name" content="JianshengHuang&#39;blogs">
-<meta property="og:description" content="计算机系统概论二进制的接收：低电频&#x2F;高电频 -&gt; 0&#x2F;1电路板针脚 -&gt; 接收电信号 计算机工作原理工作原理： 存储程序和程序控制 组成： 软件+硬件 CPU &#x3D; 运算器 + 控制器以前计算机以运算器为核心， 现代计算机以存储器为核心 计算机工作过程 各硬件作用总结 性能评价非时间指标： 机器字长， 主存容量， 存储带宽， 总线宽度 时间指标： 主频f&#x2F;时间周期T,">
+<meta property="og:description" content="-上一节中， 我们知道多个同类型的变量可以用数组存储，-而重要的数据可以单独用一个变量存储。                            -现在我们来玩一个游戏：-假如我从0到100里面选了一个数字， 你来猜我选的数字我根据你猜的数字告诉你猜大还是猜小了-怎么样可以尽可能快的猜到？              思路一从0到100, 一个一个猜， 很显然， 最后肯定">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://github.io/learning-experience-blog/imgs/%E8%AE%A1%E7%BB%84/%E7%A1%AC%E4%BB%B6.png">
-<meta property="og:image" content="http://github.io/learning-experience-blog/imgs/%E8%AE%A1%E7%BB%84/%E7%8E%B0%E4%BB%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%93%E6%9E%84.png">
-<meta property="og:image" content="http://github.io/learning-experience-blog/imgs/%E8%AE%A1%E7%BB%84/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90.png">
-<meta property="og:image" content="http://github.io/learning-experience-blog/imgs/%E8%AE%A1%E7%BB%84/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B7%A5%E4%BD%9C%E8%BF%87%E7%A8%8B.png">
-<meta property="og:image" content="http://github.io/learning-experience-blog/imgs/%E8%AE%A1%E7%BB%84/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B7%A5%E4%BD%9C%E8%BF%87%E7%A8%8B2.png">
-<meta property="og:image" content="http://github.io/learning-experience-blog/imgs/%E8%AE%A1%E7%BB%84/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B7%A5%E4%BD%9C%E8%BF%87%E7%A8%8B3.png">
-<meta property="og:image" content="http://github.io/learning-experience-blog/imgs/%E8%AE%A1%E7%BB%84/%E7%A1%AC%E4%BB%B6%E5%8A%9F%E8%83%BD.png">
-<meta property="og:image" content="http://github.io/learning-experience-blog/imgs/%E8%AE%A1%E7%BB%84/%E6%9C%BA%E5%99%A8%E6%95%B0.png">
-<meta property="og:image" content="http://github.io/learning-experience-blog/imgs/%E8%AE%A1%E7%BB%84/%E5%8E%9F%E7%A0%81-%E5%8F%8D%E7%A0%81-%E8%A1%A5%E7%A0%81.png">
-<meta property="og:image" content="http://github.io/learning-experience-blog/imgs/%E8%AE%A1%E7%BB%84/%E5%9B%9B%E7%A7%8D%E6%9C%BA%E5%99%A8%E7%A0%81%E6%80%BB%E7%BB%93.png">
-<meta property="og:image" content="http://github.io/learning-experience-blog/imgs/%E8%AE%A1%E7%BB%84/%E6%B5%AE%E7%82%B9%E6%95%B0%E8%A1%A8%E7%A4%BA.png">
-<meta property="article:published_time" content="2026-07-14T11:35:12.000Z">
-<meta property="article:modified_time" content="2026-07-15T15:17:38.985Z">
+<meta property="article:published_time" content="2026-06-12T13:46:43.000Z">
+<meta property="article:modified_time" content="2026-07-16T06:00:28.209Z">
 <meta property="article:author" content="JianshengHuang">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://github.io/learning-experience-blog/imgs/%E8%AE%A1%E7%BB%84/%E7%A1%AC%E4%BB%B6.png">
   
   
   
-  <title>计算机组成原理 - JianshengHuang&#39;blogs</title>
+  <title>二分思想引入 - JianshengHuang&#39;blogs</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -314,7 +302,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="计算机组成原理"></span>
+            <span id="subtitle" data-typed-text="二分思想引入"></span>
           
         </div>
 
@@ -325,8 +313,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-07-14 19:35" pubdate>
-          2026年7月14日 晚上
+        <time datetime="2026-06-12 21:46" pubdate>
+          2026年6月12日 晚上
         </time>
       </span>
     
@@ -337,7 +325,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          491 字
+          1.5k 字
         
       </span>
     
@@ -348,7 +336,7 @@
         
         
         
-          5 分钟
+          13 分钟
         
       </span>
     
@@ -387,35 +375,37 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">计算机组成原理</h1>
+            <h1 id="seo-header">二分思想引入</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="计算机系统概论"><a href="#计算机系统概论" class="headerlink" title="计算机系统概论"></a>计算机系统概论</h1><p>二进制的接收：<br>低电频&#x2F;高电频 -&gt; 0&#x2F;1<br>电路板针脚 -&gt; 接收电信号</p>
-<h2 id="计算机工作原理"><a href="#计算机工作原理" class="headerlink" title="计算机工作原理"></a>计算机工作原理</h2><p>工作原理： 存储程序和程序控制</p>
-<p>组成： 软件+硬件</p>
-<p><img src="/learning-experience-blog/imgs/%E8%AE%A1%E7%BB%84/%E7%A1%AC%E4%BB%B6.png" srcset="/learning-experience-blog/img/loading.gif" lazyload alt="硬件结构"><br><code>CPU = 运算器 + 控制器</code><br>以前计算机以运算器为核心， 现代计算机以存储器为核心<br><img src="/learning-experience-blog/imgs/%E8%AE%A1%E7%BB%84/%E7%8E%B0%E4%BB%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%93%E6%9E%84.png" srcset="/learning-experience-blog/img/loading.gif" lazyload alt="现代计算机结构"><br><img src="/learning-experience-blog/imgs/%E8%AE%A1%E7%BB%84/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90.png" srcset="/learning-experience-blog/img/loading.gif" lazyload alt="计算机硬件基本组成"></p>
-<h2 id="计算机工作过程"><a href="#计算机工作过程" class="headerlink" title="计算机工作过程"></a>计算机工作过程</h2><p><img src="/learning-experience-blog/imgs/%E8%AE%A1%E7%BB%84/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B7%A5%E4%BD%9C%E8%BF%87%E7%A8%8B.png" srcset="/learning-experience-blog/img/loading.gif" lazyload alt="计算机工作过程"><br><img src="/learning-experience-blog/imgs/%E8%AE%A1%E7%BB%84/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B7%A5%E4%BD%9C%E8%BF%87%E7%A8%8B2.png" srcset="/learning-experience-blog/img/loading.gif" lazyload alt="计算机工作过程"><br><img src="/learning-experience-blog/imgs/%E8%AE%A1%E7%BB%84/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%B7%A5%E4%BD%9C%E8%BF%87%E7%A8%8B3.png" srcset="/learning-experience-blog/img/loading.gif" lazyload alt="计算机总体工作过程"></p>
-<h3 id="各硬件作用总结"><a href="#各硬件作用总结" class="headerlink" title="各硬件作用总结"></a>各硬件作用总结</h3><p><img src="/learning-experience-blog/imgs/%E8%AE%A1%E7%BB%84/%E7%A1%AC%E4%BB%B6%E5%8A%9F%E8%83%BD.png" srcset="/learning-experience-blog/img/loading.gif" lazyload alt="硬件功能总结"></p>
-<h2 id="性能评价"><a href="#性能评价" class="headerlink" title="性能评价"></a>性能评价</h2><pre><code class="hljs">非时间指标： 机器字长， 主存容量， 存储带宽， 总线宽度
-时间指标： 主频f/时间周期T, 外频（CPU与主板）， 倍频
-CPU主频 = 外频 * 倍频
-CPU时间 = N * CPI * T
-</code></pre>
-<h1 id="数据表示"><a href="#数据表示" class="headerlink" title="数据表示"></a>数据表示</h1><h2 id="机器数"><a href="#机器数" class="headerlink" title="机器数"></a>机器数</h2><p>原码、反码、补码是计算机中用来表示带符号整数（正数和负数）的三种编码方式。 它们的核心作用是解决计算机硬件在处理减法运算和负数时的复杂性，通过引入补码，计算机可以将减法转化为加法来处理。
-计算机内部的整数运算全部以补码形式表示和运算。正数三码合一；负数求补码遵循“原码 -> 符号位不变数值位取反（反码） -> 加 1（补码）”的规律。</p>
+                <div class="note note-info">
+            <p>-上一节中， 我们知道多个同类型的变量可以用数组存储，<br>-而重要的数据可以单独用一个变量存储。 </p> 
+          </div>
 
-<img src="/learning-experience-blog/imgs/%E8%AE%A1%E7%BB%84/%E6%9C%BA%E5%99%A8%E6%95%B0.png" srcset="/learning-experience-blog/img/loading.gif" lazyload class="" width="600">
-<img src="/learning-experience-blog/imgs/%E8%AE%A1%E7%BB%84/%E5%8E%9F%E7%A0%81-%E5%8F%8D%E7%A0%81-%E8%A1%A5%E7%A0%81.png" srcset="/learning-experience-blog/img/loading.gif" lazyload class="" width="600">
+<div class="note note-info">
+            <p>-现在我们来玩一个游戏：<br>-假如我从0到100里面选了一个数字， 你来猜我选的数字<br>我根据你猜的数字告诉你猜大还是猜小了<br>-怎么样可以尽可能快的猜到？</p> 
+          </div>
 
-<p>
-此外，还有移码： 在补码的基础上，把最高位（符号位）取反。（无论正数还是负数，都只改符号位）。移码之所以存在，是为了解决补码在某些特定条件下比较大小效率低的问题
+<p>思路一<br>从0到100, 一个一个猜， 很显然， 最后肯定能猜到，但是如果这个数字是100, 你要猜测的次数将会高达100次！</p>
+<p>思路二<br>注意到游戏规则里面说明会告诉你猜大还是猜小， 比如我选了72,<br>你猜50, 我告诉你猜小了， 那么就可以直接排除小于50的所有数</p>
+<p>每次猜测都可以排除比我们猜测的数字大或小的所有数字，<br>要尽可能的排除不可能的情况， 我们选择中间值可以在最坏情况下最快的猜对 （证明：假如如果选了比中间值大的一个数字55， 而答案是小于55这个数字的， 接下来我们要在0到55里面选， 但是如果选的是50, 无论偏大偏小我们下一次都是只在50个数字里面选， 数字越少我们选对的概率越大， 所以选中间值可以在最坏情况下最快猜对）</p>
+<p>同时除了上一节我们介绍的for循环，我们介绍一下另一种循环的方式<br>while 循环。 正常情况下for循环常用于迭代， 而while在不知道迭代次数但是知道终止条件时用的更多。</p>
+<div class="note note-info">
+            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs python">ans = <span class="hljs-built_in">input</span>()<br>guess = <span class="hljs-built_in">input</span>()<br>guessCount = <span class="hljs-number">1</span><br><br><span class="hljs-keyword">while</span> ans <span class="hljs-keyword">not</span> equals to guess :<br>    <span class="hljs-keyword">if</span> guess &gt; ans:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;猜大了\n&quot;</span>)<br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> guess &lt; ans :<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;猜小了\n&quot;</span>)<br>    <span class="hljs-keyword">else</span> <br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;猜对了\n&quot;</span>)<br>    guess = <span class="hljs-built_in">input</span>()<br>    guessCount += <span class="hljs-number">1</span><br><span class="hljs-built_in">print</span>(guessCount)<br></code></pre></td></tr></table></figure>
+          </div>
 
-<p>移码的特点是：真值越大的数，其移码的二进制形式也越大。</p></p>
-<img src="/learning-experience-blog/imgs/%E8%AE%A1%E7%BB%84/%E5%9B%9B%E7%A7%8D%E6%9C%BA%E5%99%A8%E7%A0%81%E6%80%BB%E7%BB%93.png" srcset="/learning-experience-blog/img/loading.gif" lazyload class="" width="800">
+<p>更一般的， 如果我们要在一个给定范围的数据里面找到猜的数， 我们同样可以用这个思路， 我们把这种思路叫做二分法</p>
+<p>二分法有个前提， 这个数据得是有序的， 然后我们才可以根据偏大偏小来排除(如果不满足有序， 我们需要先排序)</p>
+<div class="note note-info">
+            <p>练习：<br>    假如现在输入了low， high 分别表示要猜测数据的最大和最小值<br>    以及一个数组存储了从low 到 high的数据, 要从这个数组里面找到我们要寻找的target, 设计程序使得能够在最坏情况下找的最快</p> <ul> <li><p>&#x2F;** 提示* 我们让程序模拟这个过程， 每次都猜中间值 *&#x2F;</p> </li> <li></li> <li></li> <li></li> <li></li> <li></li> </ul>    <div class="note note-info">             <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs python">low = <span class="hljs-built_in">input</span>(), high = <span class="hljs-built_in">input</span>(), target = <span class="hljs-built_in">input</span>()<br>cnt = <span class="hljs-number">0</span><br>   <br><span class="hljs-keyword">while</span> low &lt;= high :<br>    mid = low + (high - low) / <span class="hljs-number">2</span><br>    <span class="hljs-keyword">if</span> mid == target :<br>        <span class="hljs-keyword">break</span><br>    <span class="hljs-keyword">if</span> mid &gt; target :<br>        high = mid - <span class="hljs-number">1</span><br>    <span class="hljs-keyword">else</span> <br>        low = mid + <span class="hljs-number">1</span><br>    cnt += <span class="hljs-number">1</span><br><br><span class="hljs-built_in">print</span>(cnt)<br></code></pre></td></tr></table></figure>           </div>
+          </div>
 
-<h2 id="定点数"><a href="#定点数" class="headerlink" title="定点数"></a>定点数</h2><img src="/learning-experience-blog/imgs/%E8%AE%A1%E7%BB%84/%E6%B5%AE%E7%82%B9%E6%95%B0%E8%A1%A8%E7%A4%BA.png" srcset="/learning-experience-blog/img/loading.gif" lazyload class="" width="800">
+<p>到这里我们完成了最基本的二分查找模板， 利用这个思路我们<br>可以较快实现在有序组的查找， 在后面的二分答案算法， 二叉搜索树（BST）， 红黑树等里面都有应用</p>
+<p>后续请在洛谷或者leetcode上完成一定量二分查找标签的题目进行巩固</p>
+<p>二分答案模板(对于答案符合单调性（即大于或小于该答案的其他值均成立）和固定区间时可以使用)</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">check</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span></span>;<br><br><span class="hljs-type">int</span> l, r, ans;<br>...<br><br><span class="hljs-keyword">while</span> (l &lt;= r) &#123;<br>    <span class="hljs-type">int</span> mid = l + (r - l) / <span class="hljs-number">2</span>;<br>    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">check</span>(mid)) &#123;<br>        ans = mid;<br>        r = mid - <span class="hljs-number">1</span>;<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>        l = mid + <span class="hljs-number">1</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
                 
               </div>
             
@@ -432,8 +422,8 @@ CPU时间 = N * CPI * T
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>计算机组成原理</div>
-      <div>http://github.io/2026/07/14/computer-architecture/</div>
+      <div>二分思想引入</div>
+      <div>http://github.io/2026/06/12/二分/</div>
     </div>
     <div class="license-meta">
       
@@ -445,7 +435,7 @@ CPU时间 = N * CPI * T
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2026年7月14日</div>
+          <div>2026年6月12日</div>
         </div>
       
       
@@ -477,21 +467,15 @@ CPU时间 = N * CPI * T
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/learning-experience-blog/2026/07/15/%E7%AE%97%E6%B3%95/" title="算法笔记">
+                      <a href="/learning-experience-blog/2026/06/15/%E5%90%84%E6%96%B9%E5%BB%BA%E8%AE%AE/" title="来自各方的建议（持续更新）">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">算法笔记</span>
+                        <span class="hidden-mobile">来自各方的建议（持续更新）</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
-                    
-                      <a href="/learning-experience-blog/2026/07/11/ai-learning/" title="Agent">
-                        <span class="hidden-mobile">Agent</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
                     
                   </article>
                 </div>
